@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azam Ansari — Technical Support Specialist</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --paper: #FAFAF8;
+    --paper-alt: #F1F1EE;
+    --ink: #16202A;
+    --ink-soft: #3A4650;
+    --muted: #6B7680;
+    --accent: #2B5F87;
+    --accent-soft: #E4ECF2;
+    --line: #DADFE3;
+    --good: #3F7D5C;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent-soft); }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 72px 28px 100px;
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  /* ---------- Header ---------- */
+
+  header {
+    margin-bottom: 56px;
+  }
+
+  .status-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--good);
+    letter-spacing: 0.02em;
+    margin-bottom: 22px;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--good);
+    box-shadow: 0 0 0 3px rgba(63,125,92,0.15);
+  }
+
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+
+  .role {
+    font-size: 18px;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 22px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+  }
+
+  .contact-row > * { margin-right: 18px; margin-bottom: 4px; }
+  .contact-row > *:last-child { margin-right: 0; }
+
+  .contact-row a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .contact-row a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ---------- Section structure ---------- */
+
+  section {
+    margin-bottom: 48px;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-head h2 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  p.summary {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 66ch;
+  }
+
+  /* ---------- Skills ---------- */
+
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .skill-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 18px;
+    font-size: 14.5px;
+    align-items: baseline;
+  }
+
+  .skill-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .skill-detail {
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 560px) {
+    .skill-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  /* ---------- Experience ---------- */
+
+  .job {
+    padding-left: 20px;
+    border-left: 2px solid var(--line);
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .job::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 2px solid var(--accent);
+  }
+
+  .job:last-child { margin-bottom: 0; }
+
+  .job-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin-bottom: 3px;
+  }
+
+  .job-title {
+    font-size: 16.5px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .job-dates {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .job-company {
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .job ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--ink-soft);
+    font-size: 14.5px;
+  }
+
+  .job li { margin-bottom: 6px; }
+  .job li:last-child { margin-bottom: 0; }
+
+  /* ---------- Kitab Guru feature ---------- */
+
+  .venture {
+    background: var(--paper-alt);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 24px 26px;
+  }
+
+  .venture-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin-bottom: 8px;
+  }
+
+  .venture-title {
+    font-size: 16.5px;
+    font-weight: 600;
+  }
+
+  .venture-title a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .venture-stats {
+    display: flex;
+    gap: 22px;
+    margin-top: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  .venture-stats > * { margin-right: 22px; }
+  .venture-stats > *:last-child { margin-right: 0; }
+
+  .venture-stats strong {
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    display: block;
+  }
+
+  .venture p {
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    margin: 0;
+  }
+
+  /* ---------- Certs / Education ---------- */
+
+  .flat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .flat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    font-size: 14.5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .flat-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .flat-name { font-weight: 500; color: var(--ink); }
+  .flat-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    margin-top: 64px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+  }
+
+  footer p {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin: 0 0 14px;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 14px;
+  }
+
+  .footer-links > * { margin-right: 20px; }
+  .footer-links > *:last-child { margin-right: 0; }
+
+  .footer-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .footer-links a:hover { text-decoration: underline; }
+
+  @media print {
+    body { background: white; }
+    .venture { border: 1px solid #ccc; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <div class="status-line">
+      <span class="status-dot"></span>
+      <span>OPEN TO NEW ROLES</span>
+    </div>
+    <h1>Azam Ansari</h1>
+    <p class="role">Technical Support Specialist &mdash; SaaS, WordPress &amp; Web Infrastructure</p>
+    <div class="contact-row">
+      <span>Jamshedpur, Jharkhand, India</span>
+      <a href="mailto:aazam0067@gmail.com">aazam0067@gmail.com</a>
+      <a href="tel:+917294998922">+91 72949 98922</a>
+      <a href="https://www.linkedin.com/in/aazam-ansari/" target="_blank" rel="noopener">linkedin.com/in/aazam-ansari</a>
+    </div>
+  </header>
+
+  <section id="summary">
+    <div class="section-head">
+      <span class="section-num mono">01</span>
+      <h2>Summary</h2>
+    </div>
+    <p class="summary">
+      7 years in customer service, including 4+ years in technical support for a global SaaS platform.
+      I work daily with WordPress, DNS, SSL, email deliverability, and REST APIs &mdash; diagnosing root
+      cause rather than passing tickets along, documenting what I find, and explaining it in plain
+      language to people who just want their website working again. Outside of that, I founded and run
+      Kitab Guru, a digital delivery service serving readers in 40+ countries.
+    </p>
+  </section>
+
+  <section id="skills">
+    <div class="section-head">
+      <span class="section-num mono">02</span>
+      <h2>Core Skills</h2>
+    </div>
+    <div class="skills-list">
+      <div class="skill-row">
+        <span class="skill-label">web &amp; infra</span>
+        <span class="skill-detail">WordPress, DNS, SSL certificates, domain management, Cloudflare, SFTP</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">email</span>
+        <span class="skill-detail">Deliverability troubleshooting &mdash; SPF, DKIM, DMARC</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">api &amp; debug</span>
+        <span class="skill-detail">REST APIs, Postman, Chrome DevTools, HAR file analysis, error log review</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">platforms</span>
+        <span class="skill-detail">Zendesk, Jira, HubSpot, Zapier</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">learning</span>
+        <span class="skill-detail">HTML, CSS, JavaScript &mdash; applied through hands-on troubleshooting</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">ai-assisted</span>
+        <span class="skill-detail">Claude, ChatGPT, and Gemini used daily to speed up investigation and documentation</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-head">
+      <span class="section-num mono">03</span>
+      <h2>Experience</h2>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <span class="job-title">Website Support Specialist</span>
+        <span class="job-dates mono">Aug 2022 &ndash; Present</span>
+      </div>
+      <div class="job-company">Vendasta &middot; Remote</div>
+      <ul>
+        <li>Resolve WordPress, DNS, SSL, and email deliverability issues for a global SMB customer base.</li>
+        <li>Diagnose API-related issues using DevTools, network analysis, and HAR inspection &mdash; cut diagnosis time by 35%.</li>
+        <li>Authored 40+ knowledge base articles, reducing repeat support volume by 22% and improving first-contact resolution by 20%.</li>
+        <li>Sustained a 98% CSAT rating over 18+ months while managing a high-volume ticket queue.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <span class="job-title">Customer Service Support Specialist &ndash; SME</span>
+        <span class="job-dates mono">Feb 2021 &ndash; Jul 2022</span>
+      </div>
+      <div class="job-company">Conneqt Business Solutions &middot; Remote</div>
+      <ul>
+        <li>SME on the Flipkart CS and Sales team &mdash; 20&ndash;25 daily inquiries with consistent SLA adherence.</li>
+        <li>Mentored junior staff and improved team efficiency by 18%.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-top">
+        <span class="job-title">Customer Service Representative</span>
+        <span class="job-dates mono">Nov 2019 &ndash; Nov 2020</span>
+      </div>
+      <div class="job-company">FiveS Digital &middot; On-site</div>
+      <ul>
+        <li>Resolved 72% of issues on first contact in a fast-paced phone and chat environment.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="venture">
+    <div class="section-head">
+      <span class="section-num mono">04</span>
+      <h2>Independent Venture</h2>
+    </div>
+    <div class="venture">
+      <div class="venture-top">
+        <span class="venture-title"><a href="https://kitabguru.com" target="_blank" rel="noopener">Kitab Guru</a></span>
+        <span class="job-dates mono">Founder &middot; 2019 &ndash; Present</span>
+      </div>
+      <p>Digital book delivery service serving readers across 40+ countries. I run support, order
+        fulfilment, and operations end-to-end.</p>
+      <div class="venture-stats">
+        <div><strong>1,700+</strong>customers</div>
+        <div><strong>4.8 / 5</strong>Google rating</div>
+        <div><strong>40+</strong>countries served</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="section-head">
+      <span class="section-num mono">05</span>
+      <h2>Certifications</h2>
+    </div>
+    <div class="flat-list">
+      <div class="flat-row">
+        <span class="flat-name">Introduction to Web APIs</span>
+        <span class="flat-meta">NASBA</span>
+      </div>
+      <div class="flat-row">
+        <span class="flat-name">Generative AI for Customer Service Professionals</span>
+      </div>
+      <div class="flat-row">
+        <span class="flat-name">IT Service Desk: Customer Service Fundamentals</span>
+      </div>
+      <div class="flat-row">
+        <span class="flat-name">Writing in Plain Language</span>
+      </div>
+      <div class="flat-row">
+        <span class="flat-name">WordPress: Speeding Up Your Site</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-head">
+      <span class="section-num mono">06</span>
+      <h2>Education</h2>
+    </div>
+    <div class="flat-list">
+      <div class="flat-row">
+        <span class="flat-name">Intermediate of Science (I.Sc.)</span>
+        <span class="flat-meta">Jharkhand Academic Council &middot; 2014&ndash;2016</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Available for technical support and SaaS support roles &mdash; remote or hybrid.</p>
+    <div class="footer-links">
+      <a href="mailto:aazam0067@gmail.com">Email me</a>
+      <a href="https://www.linkedin.com/in/aazam-ansari/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://kitabguru.com" target="_blank" rel="noopener">Kitab Guru</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
