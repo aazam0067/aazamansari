@@ -360,6 +360,92 @@
   .job li:last-child { margin-bottom: 0; }
   .job li::marker { color: var(--accent); }
 
+  .performance-highlight {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.1fr repeat(3, minmax(110px, 0.55fr));
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 16px;
+    padding: 28px;
+    color: #FFFFFF;
+    background: linear-gradient(125deg, #0B3D2A 0%, #11734F 58%, #28A36D 100%);
+    border-radius: 17px;
+    box-shadow: 0 16px 34px rgba(11, 61, 42, 0.19);
+  }
+
+  .performance-highlight::after {
+    content: '#1';
+    position: absolute;
+    right: -12px;
+    bottom: -45px;
+    color: rgba(255,255,255,0.08);
+    font-family: 'Manrope', sans-serif;
+    font-size: 142px;
+    font-weight: 800;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .performance-intro {
+    position: relative;
+    z-index: 1;
+  }
+
+  .performance-kicker {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #BFF3DA;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .performance-intro h3 {
+    margin: 0 0 6px;
+    color: #FFFFFF;
+    font-family: 'Manrope', sans-serif;
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .performance-intro p {
+    margin: 0;
+    color: rgba(255,255,255,0.78);
+    font-size: 12px;
+  }
+
+  .performance-stat {
+    position: relative;
+    z-index: 1;
+    padding: 15px 12px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+  }
+
+  .performance-stat strong {
+    display: block;
+    color: #FFFFFF;
+    font-family: 'Manrope', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  .performance-stat span {
+    display: block;
+    margin-top: 4px;
+    color: rgba(255,255,255,0.8);
+    font-size: 10.5px;
+    line-height: 1.3;
+  }
+
   .recognition-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -611,6 +697,13 @@
     .venture-stats { grid-template-columns: 1fr; }
     .job { padding: 19px 18px 19px 22px; }
     .job-top { align-items: flex-start; flex-direction: column; }
+    .performance-highlight {
+      grid-template-columns: 1fr;
+      padding: 23px;
+    }
+    .performance-intro { margin-bottom: 3px; }
+    .performance-stat { text-align: left; }
+    .performance-stat strong { font-size: 24px; }
     .contact-row { flex-direction: column; align-items: flex-start; }
     .contact-row > * { max-width: 100%; }
   }
@@ -772,6 +865,25 @@
     <div class="section-head">
       <span class="section-num mono">04</span>
       <h2>Recognition &amp; Product Impact</h2>
+    </div>
+    <div class="performance-highlight">
+      <div class="performance-intro">
+        <span class="performance-kicker">Q3 2025 Performance</span>
+        <h3>Highest ticket resolution in the team</h3>
+        <p>Quarterly results shared by the Web Support Team Lead on 21 Oct 2025</p>
+      </div>
+      <div class="performance-stat">
+        <strong>#1</strong>
+        <span>Team ranking</span>
+      </div>
+      <div class="performance-stat">
+        <strong>421</strong>
+        <span>Tickets solved</span>
+      </div>
+      <div class="performance-stat">
+        <strong>100%</strong>
+        <span>Customer satisfaction</span>
+      </div>
     </div>
     <div class="recognition-grid">
       <article class="recognition-card">
