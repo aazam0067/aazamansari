@@ -14,11 +14,11 @@
     --ink: #152238;
     --ink-soft: #45536A;
     --muted: #718096;
-    --accent: #2457D6;
-    --accent-dark: #183D9B;
-    --accent-soft: #E9EFFE;
-    --teal: #0E8A7A;
-    --teal-soft: #E5F6F3;
+    --accent: #16835D;
+    --accent-dark: #0F5138;
+    --accent-soft: #E5F4EC;
+    --teal: #35A873;
+    --teal-soft: #E8F7EF;
     --line: #DDE4EE;
     --shadow: 0 18px 50px rgba(28, 47, 78, 0.09);
     --shadow-soft: 0 8px 24px rgba(28, 47, 78, 0.06);
@@ -31,8 +31,8 @@
   body {
     margin: 0;
     background:
-      radial-gradient(circle at 8% 4%, rgba(36, 87, 214, 0.12), transparent 30rem),
-      radial-gradient(circle at 94% 22%, rgba(14, 138, 122, 0.09), transparent 26rem),
+      radial-gradient(circle at 8% 4%, rgba(22, 131, 93, 0.12), transparent 30rem),
+      radial-gradient(circle at 94% 22%, rgba(53, 168, 115, 0.09), transparent 26rem),
       var(--bg);
     color: var(--ink);
     font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -44,7 +44,7 @@
     content: '';
     display: block;
     height: 5px;
-    background: linear-gradient(90deg, var(--accent), #6B5CE7, var(--teal));
+    background: linear-gradient(90deg, var(--accent-dark), var(--accent), #62B87F);
   }
 
   ::selection {
@@ -73,8 +73,8 @@
     gap: 34px;
     margin-bottom: 28px;
     padding: 44px 46px;
-    background: linear-gradient(135deg, #FFFFFF 0%, #F6F8FF 58%, #EEF7F7 100%);
-    border: 1px solid rgba(36, 87, 214, 0.15);
+    background: linear-gradient(135deg, #FFFFFF 0%, #F4FBF7 58%, #EAF7EF 100%);
+    border: 1px solid rgba(22, 131, 93, 0.15);
     border-radius: 24px;
     box-shadow: var(--shadow);
   }
@@ -102,7 +102,7 @@
     position: absolute;
     right: -20px;
     bottom: -76px;
-    color: rgba(36, 87, 214, 0.055);
+    color: rgba(22, 131, 93, 0.055);
     font-family: 'Manrope', sans-serif;
     font-size: 190px;
     font-weight: 800;
@@ -119,9 +119,9 @@
     gap: 9px;
     margin-bottom: 24px;
     padding: 7px 12px;
-    color: #087466;
+    color: #0F6849;
     background: var(--teal-soft);
-    border: 1px solid rgba(14, 138, 122, 0.18);
+    border: 1px solid rgba(53, 168, 115, 0.18);
     border-radius: 999px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -134,7 +134,7 @@
     height: 7px;
     border-radius: 50%;
     background: var(--teal);
-    box-shadow: 0 0 0 4px rgba(14, 138, 122, 0.13);
+    box-shadow: 0 0 0 4px rgba(53, 168, 115, 0.13);
   }
 
   h1 {
@@ -204,7 +204,7 @@
   }
 
   #summary {
-    background: linear-gradient(135deg, #183D9B 0%, #2457D6 60%, #3278DB 100%);
+    background: linear-gradient(135deg, #0D4D35 0%, #16835D 60%, #2B9A6C 100%);
     border: none;
   }
 
@@ -277,8 +277,8 @@
 
   .skill-row:hover {
     transform: translateY(-2px);
-    border-color: rgba(36, 87, 214, 0.35);
-    box-shadow: 0 8px 20px rgba(36, 87, 214, 0.08);
+    border-color: rgba(22, 131, 93, 0.35);
+    box-shadow: 0 8px 20px rgba(22, 131, 93, 0.08);
   }
 
   .skill-label {
@@ -360,9 +360,67 @@
   .job li:last-child { margin-bottom: 0; }
   .job li::marker { color: var(--accent); }
 
+  .recognition-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .recognition-card {
+    position: relative;
+    overflow: hidden;
+    padding: 23px;
+    background: linear-gradient(145deg, #FFFFFF, var(--accent-soft));
+    border: 1px solid rgba(22, 131, 93, 0.22);
+    border-radius: 15px;
+    box-shadow: 0 8px 22px rgba(15, 81, 56, 0.07);
+  }
+
+  .recognition-card::after {
+    content: '';
+    position: absolute;
+    right: -28px;
+    bottom: -28px;
+    width: 78px;
+    height: 78px;
+    background: rgba(22, 131, 93, 0.08);
+    border-radius: 50%;
+  }
+
+  .recognition-label {
+    display: inline-block;
+    margin-bottom: 11px;
+    padding: 5px 9px;
+    color: var(--accent-dark);
+    background: #FFFFFF;
+    border: 1px solid rgba(22, 131, 93, 0.22);
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .recognition-card h3 {
+    margin: 0 0 9px;
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .recognition-card p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+
   .venture {
     padding: 24px 25px;
-    background: linear-gradient(135deg, var(--surface-soft), #EEF3FD);
+    background: linear-gradient(135deg, var(--surface-soft), #EAF6EE);
     border: 1px solid var(--line);
     border-radius: 14px;
   }
@@ -386,7 +444,7 @@
   .venture-title a {
     color: var(--accent-dark);
     text-decoration: none;
-    border-bottom: 2px solid rgba(36,87,214,0.25);
+    border-bottom: 2px solid rgba(22,131,93,0.25);
   }
 
   .venture-title a:hover { border-color: var(--accent); }
@@ -548,7 +606,8 @@
     header::after { font-size: 125px; bottom: -48px; }
     section { padding: 25px 21px; border-radius: 15px; }
     .skills-list,
-    .flat-list { grid-template-columns: 1fr; }
+    .flat-list,
+    .recognition-grid { grid-template-columns: 1fr; }
     .venture-stats { grid-template-columns: 1fr; }
     .job { padding: 19px 18px 19px 22px; }
     .job-top { align-items: flex-start; flex-direction: column; }
@@ -709,9 +768,28 @@
     </div>
   </section>
 
-  <section id="venture">
+  <section id="recognition">
     <div class="section-head">
       <span class="section-num mono">04</span>
+      <h2>Recognition &amp; Product Impact</h2>
+    </div>
+    <div class="recognition-grid">
+      <article class="recognition-card">
+        <span class="recognition-label">Leadership Recognition</span>
+        <h3>Trusted during an escalated customer case</h3>
+        <p>Recognized by senior product-support leadership for thorough, professional responses and for handling a repeatedly escalated case with priority.</p>
+      </article>
+      <article class="recognition-card">
+        <span class="recognition-label">Product Improvement</span>
+        <h3>Investigation helped drive a bug report</h3>
+        <p>Identified and documented a recurring support-workflow issue, providing reproducible evidence that helped the product team file a bug.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="venture">
+    <div class="section-head">
+      <span class="section-num mono">05</span>
       <h2>Independent Venture</h2>
     </div>
     <div class="venture">
@@ -732,7 +810,7 @@
 
   <section id="community">
     <div class="section-head">
-      <span class="section-num mono">05</span>
+      <span class="section-num mono">06</span>
       <h2>Community Contribution</h2>
     </div>
     <div class="venture">
@@ -747,7 +825,7 @@
 
   <section id="credentials">
     <div class="section-head">
-      <span class="section-num mono">06</span>
+      <span class="section-num mono">07</span>
       <h2>Licenses &amp; Certifications</h2>
     </div>
     <div class="flat-list">
@@ -857,7 +935,7 @@
 
   <section id="education">
     <div class="section-head">
-      <span class="section-num mono">07</span>
+      <span class="section-num mono">08</span>
       <h2>Education</h2>
     </div>
     <div class="flat-list">
