@@ -463,6 +463,15 @@
     font-size: 10px;
   }
 
+  .case-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+  .case-card { padding:23px; background:linear-gradient(145deg,#FFFFFF,#F4FBF7); border:1px solid rgba(22,131,93,.22); border-radius:15px; box-shadow:0 8px 22px rgba(15,81,56,.07); }
+  .case-label { display:inline-flex; margin-bottom:12px; padding:5px 8px; color:var(--accent-dark); background:var(--accent-soft); border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:9px; font-weight:700; letter-spacing:.04em; text-transform:uppercase; }
+  .case-card h3 { margin:0 0 15px; color:var(--ink); font-family:'Manrope',sans-serif; font-size:16px; line-height:1.35; }
+  .case-step { margin:0 0 11px; color:var(--ink-soft); font-size:13px; line-height:1.55; }
+  .case-step:last-child { margin-bottom:0; }
+  .case-step strong { color:var(--accent-dark); }
+  .case-privacy { margin:15px 0 0; color:var(--muted); font-size:11px; }
+
   .feedback-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1494,9 +1503,48 @@
     </div>
   </section>
 
-  <section id="feedback">
+  <section id="case-studies">
     <div class="section-head">
       <span class="section-num mono">05</span>
+      <h2>Selected Technical Case Studies</h2>
+    </div>
+    <p class="section-intro">Recent examples from my Website Support Specialist work at Vendasta, showing how I investigate issues, isolate root causes, communicate clearly, and escalate responsibly.</p>
+    <div class="case-grid">
+      <article class="case-card">
+        <span class="case-label">WordPress Security &middot; Sep 2026</span>
+        <h3>Investigated a complex SEO-spam compromise</h3>
+        <p class="case-step"><strong>Problem:</strong> Search results showed unexpected foreign-language spam, while standard security reporting showed no active warning.</p>
+        <p class="case-step"><strong>Diagnosis:</strong> Ran a full security scan and identified a compromised configuration file, modified core files, webshells, backdoor plugins, and disguised malicious files.</p>
+        <p class="case-step"><strong>Action:</strong> Documented the findings, preserved the evidence, advised against further changes, and escalated the incident to the backend security team for specialist cleanup.</p>
+      </article>
+      <article class="case-card">
+        <span class="case-label">SFTP &amp; Plugin Debugging &middot; Sep 2026</span>
+        <h3>Restored WordPress administrator access</h3>
+        <p class="case-step"><strong>Problem:</strong> Administrator access had failed for two days, and standard troubleshooting had not fixed it.</p>
+        <p class="case-step"><strong>Diagnosis:</strong> Accessed the backend through SFTP and isolated plugins systematically until identifying an authentication-plugin conflict.</p>
+        <p class="case-step"><strong>Result:</strong> Disabled the conflicting plugin, restored administrator access, and confirmed the recovery with the partner.</p>
+      </article>
+      <article class="case-card">
+        <span class="case-label">DNS &amp; Domain Verification &middot; Sep 2026</span>
+        <h3>Resolved a custom-domain publishing failure</h3>
+        <p class="case-step"><strong>Problem:</strong> Website edits were not appearing on the live custom domain even though the application configuration appeared correct.</p>
+        <p class="case-step"><strong>Diagnosis:</strong> Found a stale verification record and a duplicate domain record that continued serving the older website.</p>
+        <p class="case-step"><strong>Result:</strong> Guided the partner through DNS corrections during a live call and confirmed successful domain verification.</p>
+      </article>
+      <article class="case-card">
+        <span class="case-label">Email Deliverability &middot; Sep 2026</span>
+        <h3>Recovered missing form notifications</h3>
+        <p class="case-step"><strong>Problem:</strong> Valid website-form submissions were no longer generating email notifications.</p>
+        <p class="case-step"><strong>Diagnosis:</strong> Traced the failure to a recipient address placed on a suppression list after an earlier delivery bounce.</p>
+        <p class="case-step"><strong>Result:</strong> Removed the suppression, tested delivery successfully, explained a fallback monitoring path, and raised the partner's alerting request internally.</p>
+      </article>
+    </div>
+    <p class="case-privacy">Customer identities, domains, ticket references, internal links, and infrastructure details have been removed to protect confidentiality.</p>
+  </section>
+
+  <section id="feedback">
+    <div class="section-head">
+      <span class="section-num mono">06</span>
       <h2>What Vendasta Agency Partners Say</h2>
     </div>
     <p class="section-intro">Verified comments received from Vendasta agency partners after support tickets I handled. Names and business details are withheld for privacy; dated source records are available upon request.</p>
@@ -1531,7 +1579,7 @@
 
   <section id="venture">
     <div class="section-head">
-      <span class="section-num mono">06</span>
+      <span class="section-num mono">07</span>
       <h2>Independent Venture</h2>
     </div>
     <div class="venture">
@@ -1553,7 +1601,7 @@
 
   <section id="community">
     <div class="section-head">
-      <span class="section-num mono">07</span>
+      <span class="section-num mono">08</span>
       <h2>Community Contribution</h2>
     </div>
     <div class="venture">
@@ -1568,7 +1616,7 @@
 
   <section id="credentials">
     <div class="section-head">
-      <span class="section-num mono">08</span>
+      <span class="section-num mono">09</span>
       <h2>Licenses &amp; Certifications</h2>
     </div>
     <div class="flat-list">
@@ -1637,7 +1685,7 @@
 
   <section id="education">
     <div class="section-head">
-      <span class="section-num mono">09</span>
+      <span class="section-num mono">10</span>
       <h2>Education</h2>
     </div>
     <div class="flat-list">
