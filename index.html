@@ -708,6 +708,41 @@
     line-height: 1.3;
   }
 
+  .performance-details {
+    margin: 0 0 16px;
+  }
+
+  .performance-details summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 17px;
+    color: var(--accent-dark);
+    background: var(--accent-soft);
+    border: 1px solid rgba(22, 131, 93, 0.28);
+    border-radius: 11px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    list-style: none;
+  }
+
+  .performance-details summary::-webkit-details-marker { display: none; }
+
+  .performance-details summary::after {
+    content: '+';
+    font-family: 'Manrope', sans-serif;
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .performance-details[open] summary::after { content: '−'; }
+
+  .performance-details[open] .performance-history {
+    margin-top: 12px;
+  }
+
   .performance-history {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1198,8 +1233,8 @@
       <h2>Summary</h2>
     </div>
     <p class="summary">
-      Technical support professional with 7+ years in customer service, including 4 years supporting
-      international customers on a SaaS website platform. I troubleshoot WordPress and WooCommerce,
+      Technical support professional with 7+ years in customer service, supporting international
+      customers and agency partners at Vendasta since August 2022. I troubleshoot WordPress and WooCommerce,
       DNS, SSL/TLS, email deliverability, hosting, migrations, performance, security, backups, and
       integrations across email, chat, phone, and screen share. I take ownership from investigation
       through resolution, collaborate with engineering teams when needed, document solutions, and
@@ -1276,10 +1311,11 @@
         <span class="job-title">Customer Service Support Specialist &ndash; SME</span>
         <span class="job-dates mono">Feb 2021 &ndash; Jul 2022</span>
       </div>
-      <div class="job-company">Conneqt Business Solutions &middot; Remote</div>
+      <div class="job-company">Conneqt Business Solutions &middot; Flipkart Process &middot; Remote</div>
       <ul>
-        <li>Worked as an SME supporting Flipkart customer service and sales operations while handling 20&ndash;25 daily inquiries.</li>
-        <li>Guided junior team members, supported escalations, and helped maintain service quality and SLA adherence.</li>
+        <li>Provided voice support for Flipkart customers across orders, billing, returns, refunds, and related e-commerce concerns.</li>
+        <li>Served as a subject-matter expert, handling escalation calls and helping agents navigate processes and support tools.</li>
+        <li>Trained new joiners, supported their day-to-day questions, and helped coordinate team attendance.</li>
       </ul>
     </div>
 
@@ -1288,9 +1324,11 @@
         <span class="job-title">Customer Service Representative</span>
         <span class="job-dates mono">Nov 2019 &ndash; Nov 2020</span>
       </div>
-      <div class="job-company">FiveS Digital &middot; On-site</div>
+      <div class="job-company">FiveS Digital &middot; On-site &amp; Remote</div>
       <ul>
-        <li>Supported customers through phone and chat, resolving account and service inquiries in a fast-paced environment.</li>
+        <li>Provided primarily voice-based support, with some email support, for the Nykaa process across cancellations, billing, products, orders, and related customer concerns.</li>
+        <li>Also supported the ETIAS process through accurate document-based data entry and record completion.</li>
+        <li>Worked on-site during the initial months before transitioning to remote work.</li>
       </ul>
     </div>
 
@@ -1299,9 +1337,9 @@
         <span class="job-title">Customer Service Representative</span>
         <span class="job-dates mono">Nov 2017 &ndash; Feb 2018</span>
       </div>
-      <div class="job-company">Aegis Global Academy &middot; On-site</div>
+      <div class="job-company">Aegis Global Academy &middot; Vodafone Process &middot; On-site</div>
       <ul>
-        <li>Handled customer inquiries, documented interactions, and delivered clear resolutions while meeting process requirements.</li>
+        <li>Provided voice support for Vodafone customers, resolving recharge and billing concerns, lost-SIM requests, missing recharge updates, SMS-limit questions, and other telecom service issues.</li>
       </ul>
     </div>
   </section>
@@ -1371,7 +1409,9 @@
         <span class="win-date">Final leaderboard &middot; 6 Oct 2025</span>
       </article>
     </div>
-    <div class="performance-history">
+    <details class="performance-details">
+      <summary>View earlier monthly results and leadership recognition</summary>
+      <div class="performance-history">
       
       
       <article class="history-item">
@@ -1434,7 +1474,8 @@
         </div>
         <p class="history-note">Recognized for delivering strong support on an individual customer case.</p>
       </article>
-    </div>
+      </div>
+    </details>
     <div class="evidence-note">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 4.5 6v5.4c0 4.7 3.2 8.9 7.5 10.1 4.3-1.2 7.5-5.4 7.5-10.1V6L12 3Z"></path><path d="m8.5 12 2.2 2.2 4.8-5"></path></svg>
       <span><strong>Supporting evidence available upon request.</strong> Performance figures are based on dated internal reporting records. Redacted evidence can be shared during the recruitment process while protecting confidential company and customer information.</span>
@@ -1605,13 +1646,13 @@
       </div>
       <div class="flat-row">
         <span class="flat-name">Intermediate of Science (I.Sc.) &mdash; Mathematics</span>
-        <span class="flat-meta">Jharkhand Academic Council &middot; 2014&ndash;2016</span>
+        <span class="flat-meta">Jamshedpur Workers College &middot; Jharkhand Academic Council &middot; 2014&ndash;2016</span>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>Available for technical support and SaaS support roles &mdash; remote or hybrid.</p>
+    <p>Available for remote technical support, website support, and SaaS support roles.</p>
     <div class="footer-links">
       <a href="mailto:aazam0067@gmail.com">Email me</a>
       <a href="https://www.linkedin.com/in/aazam-ansari/" target="_blank" rel="noopener">LinkedIn</a>
