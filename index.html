@@ -265,6 +265,44 @@
     line-height: 1.75;
   }
 
+  .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 23px;
+  }
+
+  .summary-stat {
+    padding: 14px 12px;
+    background: rgba(255,255,255,0.11);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 11px;
+    backdrop-filter: blur(5px);
+  }
+
+  .summary-stat strong {
+    display: block;
+    color: #FFFFFF;
+    font-family: 'Manrope', sans-serif;
+    font-size: 21px;
+    line-height: 1.15;
+  }
+
+  .summary-stat span {
+    display: block;
+    margin-top: 4px;
+    color: rgba(255,255,255,0.78);
+    font-size: 10.5px;
+    line-height: 1.35;
+  }
+
+  .section-intro {
+    max-width: 720px;
+    margin: -5px 0 20px;
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+
   .skills-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -417,6 +455,26 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 13px;
+  }
+
+  #feedback {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5FBF7 100%);
+  }
+
+  #feedback .section-head h2::after {
+    content: 'Verified support comments';
+    display: inline-block;
+    margin-left: 10px;
+    padding: 4px 8px;
+    color: var(--accent-dark);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    vertical-align: middle;
+    text-transform: uppercase;
   }
 
   .feedback-card {
@@ -600,6 +658,64 @@
     border-radius: 7px;
     font-size: 10.5px;
     font-weight: 700;
+  }
+
+  .history-item:has(.rank-chip) {
+    border-width: 2px;
+  }
+
+  .rank-chip {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    color: #3B2B00 !important;
+    font-weight: 800 !important;
+  }
+
+  .rank-chip::before {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 21px;
+    height: 21px;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  }
+
+  .rank-one {
+    background: linear-gradient(135deg, #FFF4BD, #FFD76A) !important;
+    border: 1px solid #E5B937;
+  }
+
+  .rank-one::before {
+    content: '1';
+    background: linear-gradient(135deg, #D59B00, #F3C53E);
+  }
+
+  .rank-two {
+    color: #384152 !important;
+    background: linear-gradient(135deg, #F3F5F8, #D9DEE7) !important;
+    border: 1px solid #BEC5D0;
+  }
+
+  .rank-two::before {
+    content: '2';
+    background: linear-gradient(135deg, #7D8796, #B8C0CB);
+  }
+
+  .rank-three {
+    color: #4A2A18 !important;
+    background: linear-gradient(135deg, #F6D2BB, #DDA47D) !important;
+    border: 1px solid #C78960;
+  }
+
+  .rank-three::before {
+    content: '3';
+    background: linear-gradient(135deg, #9A5834, #C68158);
   }
 
   .history-note {
@@ -883,6 +999,7 @@
     .flat-list,
     .recognition-grid,
     .performance-history { grid-template-columns: 1fr; }
+    .summary-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .venture-stats { grid-template-columns: 1fr; }
     .job { padding: 19px 18px 19px 22px; }
     .job-top { align-items: flex-start; flex-direction: column; }
@@ -977,6 +1094,12 @@
       through resolution, collaborate with engineering teams when needed, document solutions, and
       explain technical issues in clear, practical language.
     </p>
+    <div class="summary-stats" aria-label="Career highlights">
+      <div class="summary-stat"><strong>4,046+</strong><span>support tickets resolved</span></div>
+      <div class="summary-stat"><strong>98%</strong><span>CSAT sustained over 17 months</span></div>
+      <div class="summary-stat"><strong>50+</strong><span>knowledge-base contributions</span></div>
+      <div class="summary-stat"><strong>57 &rarr; 97</strong><span>website performance improvement</span></div>
+    </div>
   </section>
 
   <section id="skills">
@@ -1074,7 +1197,7 @@
   <section id="recognition">
     <div class="section-head">
       <span class="section-num mono">04</span>
-      <h2>Recognition &amp; Product Impact</h2>
+      <h2>Performance Highlights &amp; Recognition</h2>
     </div>
     <div class="latest-result">
       <div class="latest-result-label">
@@ -1121,8 +1244,8 @@
         <p>Quarterly results shared by the Web Support Team Lead on 21 Oct 2025</p>
       </div>
       <div class="performance-stat">
-        <strong>#1</strong>
-        <span>Team ranking</span>
+        <strong aria-label="Number one team ranking">&#9733; #1</strong>
+        <span>Highest team ranking</span>
       </div>
       <div class="performance-stat">
         <strong>421</strong>
@@ -1138,7 +1261,7 @@
         <span class="history-date">October 2025</span>
         <h3>Top performer for monthly productivity</h3>
         <div class="history-metrics">
-          <span>#1 in tickets solved</span>
+          <span class="rank-chip rank-one">#1 in tickets solved</span>
           <span>231 tickets</span>
           <span>96.6% CSAT</span>
         </div>
@@ -1148,7 +1271,7 @@
         <span class="history-date">September 2025</span>
         <h3>Top performer with perfect satisfaction</h3>
         <div class="history-metrics">
-          <span>#1 in tickets solved</span>
+          <span class="rank-chip rank-one">#1 in tickets solved</span>
           <span>191 tickets</span>
           <span>100% CSAT</span>
         </div>
@@ -1176,7 +1299,7 @@
         <span class="history-date">February 2025</span>
         <h3>Second-highest monthly ticket result</h3>
         <div class="history-metrics">
-          <span>#2 team ranking</span>
+          <span class="rank-chip rank-two">#2 team ranking</span>
           <span>209 total ticket credits</span>
           <span>207 solved + 2 bug credits</span>
           <span>100% customer satisfaction</span>
@@ -1199,7 +1322,7 @@
         <span class="history-date">January 2025</span>
         <h3>Top-three monthly performance</h3>
         <div class="history-metrics">
-          <span>#3 team ranking</span>
+          <span class="rank-chip rank-three">#3 team ranking</span>
           <span>212 total ticket credits</span>
           <span>210 solved + 2 bug credits</span>
           <span>100% customer satisfaction</span>
@@ -1236,8 +1359,9 @@
   <section id="feedback">
     <div class="section-head">
       <span class="section-num mono">05</span>
-      <h2>Partner Feedback</h2>
+      <h2>What Agency Partners Say About My Support</h2>
     </div>
+    <p class="section-intro">Selected comments received from agency partners after I resolved their support tickets. Names and business details are withheld for privacy; dated source records are available upon request.</p>
     <div class="feedback-grid">
       <article class="feedback-card">
         <span class="feedback-mark">&ldquo;</span>
