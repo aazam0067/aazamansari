@@ -526,6 +526,102 @@
     letter-spacing: 0.02em;
   }
 
+  .top-wins-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 22px 0 12px;
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .top-wins-title svg {
+    width: 20px;
+    height: 20px;
+    color: #C58C00;
+  }
+
+  .top-wins {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 17px;
+  }
+
+  .win-card {
+    position: relative;
+    overflow: hidden;
+    padding: 21px;
+    background: linear-gradient(145deg, #FFFDF3, #FFF1B8);
+    border: 1px solid #E3BE4E;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(150, 105, 0, 0.1);
+  }
+
+  .win-card::after {
+    content: '#1';
+    position: absolute;
+    right: -5px;
+    bottom: -16px;
+    color: rgba(150,105,0,0.09);
+    font-family: 'Manrope', sans-serif;
+    font-size: 70px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .win-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 11px;
+    padding: 6px 9px;
+    color: #4A3500;
+    background: linear-gradient(135deg, #FFD766, #F3B91D);
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .win-badge svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .win-card h3 {
+    margin: 0 0 12px;
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+  }
+
+  .win-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .win-numbers span {
+    position: relative;
+    z-index: 1;
+    padding: 6px 8px;
+    color: #4A3500;
+    background: rgba(255,255,255,0.66);
+    border-radius: 7px;
+    font-size: 10.5px;
+    font-weight: 700;
+  }
+
+  .win-date {
+    display: block;
+    margin-top: 11px;
+    color: #78611C;
+    font-size: 10px;
+  }
+
   .performance-highlight {
     position: relative;
     overflow: hidden;
@@ -1028,6 +1124,9 @@
     .feedback-grid {
       grid-template-columns: 1fr;
     }
+    .top-wins {
+      grid-template-columns: 1fr;
+    }
     .performance-intro { margin-bottom: 3px; }
     .performance-stat { text-align: left; }
     .performance-stat strong { font-size: 24px; }
@@ -1251,46 +1350,30 @@
         <span>customer satisfaction</span>
       </div>
     </div>
-    <div class="performance-highlight">
-      <div class="performance-intro">
-        <span class="performance-kicker">Q3 2025 Performance</span>
-        <h3>Highest ticket resolution in the team</h3>
-        <p>Quarterly results shared by the Web Support Team Lead on 21 Oct 2025</p>
-      </div>
-      <div class="performance-stat">
-        <strong aria-label="Number one team ranking">&#9733; #1</strong>
-        <span>Highest team ranking</span>
-      </div>
-      <div class="performance-stat">
-        <strong>421</strong>
-        <span>Tickets solved</span>
-      </div>
-      <div class="performance-stat">
-        <strong>100%</strong>
-        <span>Customer satisfaction</span>
-      </div>
+    <div class="top-wins-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"></path><path d="M7 6H4v1a4 4 0 0 0 4 4M17 6h3v1a4 4 0 0 1-4 4"></path></svg><span>Top Performer Wins</span></div>
+    <div class="top-wins">
+      <article class="win-card">
+        <span class="win-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"></path><path d="M7 6H4v1a4 4 0 0 0 4 4M17 6h3v1a4 4 0 0 1-4 4"></path></svg> #1 Top Performer</span>
+        <h3>October 2025</h3>
+        <div class="win-numbers"><span>231 tickets</span><span>96.6% CSAT</span></div>
+        <span class="win-date">Final leaderboard &middot; 5 Nov 2025</span>
+      </article>
+      <article class="win-card">
+        <span class="win-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"></path><path d="M7 6H4v1a4 4 0 0 0 4 4M17 6h3v1a4 4 0 0 1-4 4"></path></svg> #1 Top Performer</span>
+        <h3>Q3 2025</h3>
+        <div class="win-numbers"><span>421 tickets</span><span>100% CSAT</span></div>
+        <span class="win-date">Quarterly results &middot; 21 Oct 2025</span>
+      </article>
+      <article class="win-card">
+        <span class="win-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"></path><path d="M7 6H4v1a4 4 0 0 0 4 4M17 6h3v1a4 4 0 0 1-4 4"></path></svg> #1 Top Performer</span>
+        <h3>September 2025</h3>
+        <div class="win-numbers"><span>191 tickets</span><span>100% CSAT</span></div>
+        <span class="win-date">Final leaderboard &middot; 6 Oct 2025</span>
+      </article>
     </div>
     <div class="performance-history">
-      <article class="history-item">
-        <span class="history-date">October 2025</span>
-        <h3>Top performer for monthly productivity</h3>
-        <div class="history-metrics">
-          <span class="rank-chip rank-one">#1 in tickets solved</span>
-          <span>231 tickets</span>
-          <span>96.6% CSAT</span>
-        </div>
-        <p class="history-note">Final monthly leaderboard shared on 5 Nov 2025</p>
-      </article>
-      <article class="history-item">
-        <span class="history-date">September 2025</span>
-        <h3>Top performer with perfect satisfaction</h3>
-        <div class="history-metrics">
-          <span class="rank-chip rank-one">#1 in tickets solved</span>
-          <span>191 tickets</span>
-          <span>100% CSAT</span>
-        </div>
-        <p class="history-note">Final monthly leaderboard shared on 6 Oct 2025</p>
-      </article>
+      
+      
       <article class="history-item">
         <span class="history-date">August 2025</span>
         <h3>Consistent monthly performance</h3>
