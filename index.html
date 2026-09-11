@@ -368,6 +368,94 @@
   .job li:last-child { margin-bottom: 0; }
   .job li::marker { color: var(--accent); }
 
+  .latest-result {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+    padding: 18px 20px;
+    background: #FFFFFF;
+    border: 1px solid rgba(22, 131, 93, 0.25);
+    border-radius: 13px;
+    box-shadow: 0 8px 22px rgba(15, 81, 56, 0.07);
+  }
+
+  .latest-result-label strong {
+    display: block;
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+  }
+
+  .latest-result-label span {
+    color: var(--muted);
+    font-size: 11px;
+  }
+
+  .latest-result-stat {
+    min-width: 112px;
+    padding: 10px 13px;
+    color: var(--accent-dark);
+    background: var(--accent-soft);
+    border-radius: 9px;
+    text-align: center;
+  }
+
+  .latest-result-stat strong {
+    display: block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 19px;
+    line-height: 1.15;
+  }
+
+  .latest-result-stat span {
+    font-size: 10px;
+  }
+
+  .feedback-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .feedback-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 175px;
+    padding: 23px;
+    background: linear-gradient(145deg, #FFFFFF, #F1FAF5);
+    border: 1px solid rgba(22, 131, 93, 0.2);
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(15, 81, 56, 0.06);
+  }
+
+  .feedback-mark {
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-size: 39px;
+    font-weight: 700;
+    line-height: 0.8;
+  }
+
+  .feedback-card blockquote {
+    margin: 10px 0 18px;
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .feedback-meta {
+    margin-top: auto;
+    padding-top: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.02em;
+  }
+
   .performance-highlight {
     position: relative;
     overflow: hidden;
@@ -802,6 +890,15 @@
       grid-template-columns: 1fr;
       padding: 23px;
     }
+    .latest-result {
+      grid-template-columns: 1fr;
+    }
+    .latest-result-stat {
+      text-align: left;
+    }
+    .feedback-grid {
+      grid-template-columns: 1fr;
+    }
     .performance-intro { margin-bottom: 3px; }
     .performance-stat { text-align: left; }
     .performance-stat strong { font-size: 24px; }
@@ -979,6 +1076,20 @@
       <span class="section-num mono">04</span>
       <h2>Recognition &amp; Product Impact</h2>
     </div>
+    <div class="latest-result">
+      <div class="latest-result-label">
+        <strong>December 2025 performance</strong>
+        <span>Individual result from dated internal reporting</span>
+      </div>
+      <div class="latest-result-stat">
+        <strong>101</strong>
+        <span>tickets solved</span>
+      </div>
+      <div class="latest-result-stat">
+        <strong>100%</strong>
+        <span>customer satisfaction</span>
+      </div>
+    </div>
     <div class="performance-highlight">
       <div class="performance-intro">
         <span class="performance-kicker">Q3 2025 Performance</span>
@@ -1057,9 +1168,43 @@
     </div>
   </section>
 
-  <section id="venture">
+  <section id="feedback">
     <div class="section-head">
       <span class="section-num mono">05</span>
+      <h2>Partner Feedback</h2>
+    </div>
+    <div class="feedback-grid">
+      <article class="feedback-card">
+        <span class="feedback-mark">&ldquo;</span>
+        <blockquote>Five stars. Azam did an amazing job getting this handled.</blockquote>
+        <span class="feedback-meta">Verified partner feedback &middot; Q3 2025</span>
+      </article>
+      <article class="feedback-card">
+        <span class="feedback-mark">&ldquo;</span>
+        <blockquote>Exceptional customer service. Azam is very helpful, wonderfully patient, great to chat with, and quick to respond.</blockquote>
+        <span class="feedback-meta">Verified partner feedback &middot; February 2024</span>
+      </article>
+      <article class="feedback-card">
+        <span class="feedback-mark">&ldquo;</span>
+        <blockquote>Always a great experience with support from Azam. He helped solve the problem when I needed to finish a report. Excellent customer service.</blockquote>
+        <span class="feedback-meta">Verified partner feedback &middot; November 2023</span>
+      </article>
+      <article class="feedback-card">
+        <span class="feedback-mark">&ldquo;</span>
+        <blockquote>Thankful for the helpful videos, for solving the issue, and for responding in a much quicker timeframe. Very pleased.</blockquote>
+        <span class="feedback-meta">Verified partner feedback &middot; April 2023</span>
+      </article>
+      <article class="feedback-card">
+        <span class="feedback-mark">&ldquo;</span>
+        <blockquote>Wonderful and very helpful. Thank you for the quick support in helping us connect the proper domain. Very happy with the support received.</blockquote>
+        <span class="feedback-meta">Verified partner feedback &middot; November 2022</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="venture">
+    <div class="section-head">
+      <span class="section-num mono">06</span>
       <h2>Independent Venture</h2>
     </div>
     <div class="venture">
@@ -1080,7 +1225,7 @@
 
   <section id="community">
     <div class="section-head">
-      <span class="section-num mono">06</span>
+      <span class="section-num mono">07</span>
       <h2>Community Contribution</h2>
     </div>
     <div class="venture">
@@ -1095,7 +1240,7 @@
 
   <section id="credentials">
     <div class="section-head">
-      <span class="section-num mono">07</span>
+      <span class="section-num mono">08</span>
       <h2>Licenses &amp; Certifications</h2>
     </div>
     <div class="flat-list">
@@ -1164,7 +1309,7 @@
 
   <section id="education">
     <div class="section-head">
-      <span class="section-num mono">08</span>
+      <span class="section-num mono">09</span>
       <h2>Education</h2>
     </div>
     <div class="flat-list">
