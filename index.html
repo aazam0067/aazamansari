@@ -1326,7 +1326,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid #
     <div class="summary-stats" aria-label="Vendasta role highlights">
       <div class="summary-stat"><strong>6,000+</strong><span>Vendasta support tickets resolved since Aug 2022</span></div>
       <div class="summary-stat"><strong>98%</strong><span>CSAT sustained over 17 months</span></div>
-      <div class="summary-stat"><strong>14</strong><span>selected technical case studies</span></div>
+      <div class="summary-stat"><strong>15</strong><span>selected technical case studies</span></div>
       <div class="summary-stat"><strong>57 &rarr; 97</strong><span>website performance improvement</span></div>
     </div>
   </section>
@@ -1638,6 +1638,25 @@ a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid #
 <div class="story-step"><h4>My action</h4><p>I disabled the identified plugin and checked backend access again. This linked the restored access to a specific component rather than an unexplained general reset.</p></div>
 <div class="story-step"><h4>Outcome and limits</h4><p>Administrator access was restored, and I shared a screenshot confirming the fix. The record demonstrates targeted plugin isolation through an alternative access path when the dashboard itself was unavailable.</p></div>
 <a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Restoring%20WordPress%20admin%20access%20through%20SFTP%20investigation">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-complex" id="case-email-authentication">
+<div class="case-meta"><span class="case-label">3–12 Jul 2026</span><span class="complexity">Complex complexity</span></div>
+<p class="case-topic">Email authentication and delivery</p>
+<h3>Separating sender authentication from recipient-side email rejection</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Authentication troubleshooting · Escalation follow-through · Technical handoff · Customer communication</p>
+<p class="case-status">Platform fix communicated; recipient action advised; ticket closed</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4>
+<p>The partner initially reported bounced Gravity Forms notifications on 23 June, then raised an email-history visibility issue on a second website. An earlier team update described successful delivery events and a global fix for the history view. The partner briefly believed the bounces had stopped, but reported them again on 1 July. The renewed failure required separating a reporting issue from the delivery problem that was still affecting the first website.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4>
+<p>My documented involvement began on 3 July. I noted that the email was already verified in the application and checked with the team through the existing escalation. On 5 July, I followed up internally and kept the partner informed while the investigation continued. Application-level verification alone did not explain the recurring bounces.</p>
+<p>By 9 July, the team's investigation had identified and corrected a sending-side authentication issue. In my customer update, I explained that the site's messages were now signed as the sending domain and passed DMARC. However, a second layer remained: the recipient's Mimecast security service was rejecting the messages under its impersonation/anti-spoofing policy. In this case, authentication passing did not mean the recipient's separate security policy would accept the external sending service.</p></div>
+<div class="story-step"><h4>My action and technical handoff</h4>
+<p>I translated the team's findings into a practical explanation of the two issues: the platform-side authentication defect had been addressed, while the remaining rejection required action from the recipient's email administrator. I explained that the website sent mail through SendGrid on the customer's behalf and that the recipient's policy was treating this as an external source using the organization's domain.</p>
+<p>I advised the partner to have their Mimecast administrator review the identified sending source for an appropriate permitted-sender entry or impersonation-protection exception, and offered to provide the sending details needed for that review. I then moved the ticket to Waiting on Customer. This was a targeted handoff for the recipient administrator, not a claim that I had changed their security configuration.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4>
+<p>I followed up on 12 July and marked the ticket solved. The thread documents the team-delivered authentication correction, my explanation of the remaining rejection, and the next steps provided to the partner. It does not contain confirmation that the recipient administrator applied the exception or that final delivery succeeded. Ticket closure is therefore recorded separately from verified end-to-end recovery.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Separating%20sender%20authentication%20from%20recipient-side%20email%20rejection">Request redacted evidence &rarr;</a>
 </details></article>
 <article class="case-card case-intermediate" id="case-captcha">
 <div class="case-meta"><span class="case-label">21–26 May 2026</span><span class="complexity">Intermediate complexity</span></div>
