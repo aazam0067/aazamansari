@@ -1220,9 +1220,62 @@
     #summary .section-num,
     #summary p.summary { color: var(--ink); }
   }
+
+/* Case-study hierarchy and accessible section navigation */
+html { scroll-padding-top:100px; }
+[id] { scroll-margin-top:100px; }
+.section-nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,.97); border-bottom:1px solid var(--line); box-shadow:0 3px 16px #1522380d; }
+.nav-inner { max-width:1200px; margin:auto; padding:12px 20px; display:flex; align-items:center; gap:22px; }
+.nav-brand { color:var(--accent-dark); font-family:Manrope,sans-serif; font-weight:800; text-decoration:none; white-space:nowrap; }
+.nav-brand span { margin-left:7px; font-size:11px; font-weight:500; }
+.desktop-links { display:flex; flex-wrap:wrap; gap:5px; }
+.desktop-links a,.mobile-menu-links a { text-decoration:none; font-size:12px; padding:7px 9px; border-radius:7px; color:var(--ink-soft); }
+.desktop-links a:hover,.mobile-menu-links a:hover { background:var(--accent-soft); color:var(--accent-dark); }
+.mobile-menu { display:none; }
+.case-grid { align-items:start; }
+.case-card { min-width:0; border-top:4px solid #548878; }
+.case-complex { background:linear-gradient(145deg,#fffaf0,#fff); border-color:#d5a643; border-top:5px solid #a06a0a; }
+.case-intermediate { background:linear-gradient(145deg,#f0f8ff,#fff); border-color:#abc9df; border-top-color:#28618c; }
+.case-focused { background:linear-gradient(145deg,#f1faf5,#fff); border-top-color:#16835d; }
+.case-meta { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.case-meta .case-label { margin:0; }
+.complexity { padding:4px 7px; border:1px solid currentColor; border-radius:6px; color:#375b4d; font-size:10px; font-weight:700; }
+.case-complex .complexity { color:#795005; background:#fff0c2; }
+.case-intermediate .complexity { color:#21577d; background:#e6f3ff; }
+.case-topic { margin:0 0 5px; color:var(--ink-soft); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+.case-card h3 { font-size:20px; line-height:1.35; margin-bottom:12px; }
+.case-ability { font-size:12px; color:var(--ink-soft); line-height:1.6; margin:0 0 12px; }
+.case-status { margin:0 0 16px; font-size:12px; font-weight:700; color:var(--ink); }
+.case-story summary { cursor:pointer; padding:12px 0; border-top:1px solid var(--line); color:var(--accent-dark); font-size:13px; font-weight:700; }
+.story-step { margin:17px 0; }
+.story-step h4 { font-size:12px; color:var(--ink); margin:0 0 6px; }
+.story-step p { font-size:14px; line-height:1.8; color:var(--ink-soft); margin:0; }
+.complexity-key { font-size:12px; line-height:1.7; padding:14px 16px; background:#f4f7fa; border-radius:10px; color:var(--ink-soft); }
+.case-controls { display:flex; flex-wrap:wrap; align-items:center; gap:9px; margin:18px 0; }
+.case-controls button,.case-controls a { border:1px solid #bdd4c8; border-radius:8px; background:#fff; padding:10px 12px; font:600 12px 'DM Sans',sans-serif; color:var(--accent-dark); cursor:pointer; text-decoration:none; }
+.jump-controls { position:fixed; right:18px; bottom:18px; z-index:90; display:flex; gap:7px; }
+.jump-controls a { display:flex; gap:6px; align-items:center; justify-content:center; min-height:44px; padding:9px 12px; background:#0f5138; color:#fff; border:1px solid #ffffff55; border-radius:10px; text-decoration:none; box-shadow:0 4px 15px #0002; font-size:12px; }
+.jump-controls svg { width:17px; height:17px; }
+a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid #c78e16; outline-offset:3px; }
+@media(max-width:900px) {
+.desktop-links { display:none; }
+.nav-inner { justify-content:space-between; }
+.mobile-menu { display:block; }
+.mobile-menu summary { cursor:pointer; padding:8px 12px; color:var(--accent-dark); font-size:14px; }
+.mobile-menu-links { position:absolute; top:100%; left:0; right:0; padding:12px 16px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); background:#fff; box-shadow:0 10px 20px #0002; border-bottom:1px solid var(--line); }
+.mobile-menu-links a { min-height:44px; display:flex; align-items:center; }
+}
+@media(max-width:700px) { .case-grid { grid-template-columns:1fr; } .case-card { padding:20px; } .jump-controls { right:10px; bottom:10px; } footer { padding-bottom:70px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+@media print { .section-nav,.jump-controls,.case-controls { display:none; } }
+
 </style>
 </head>
-<body>
+<body id="page-top">
+<nav class="section-nav" aria-label="Portfolio sections"><div class="nav-inner">
+<a class="nav-brand" href="#page-top">AA<span>Portfolio</span></a>
+<details class="mobile-menu"><summary>Sections <span aria-hidden="true">☰</span></summary><div class="mobile-menu-links"><a href="#summary">Summary</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#recognition">Performance</a><a href="#case-studies">Case studies</a><a href="#feedback">Feedback</a><a href="#venture">Kitab Guru</a><a href="#community">Community</a><a href="#credentials">Certifications</a><a href="#education">Education</a></div></details>
+<div class="desktop-links"><a href="#summary">Summary</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#recognition">Performance</a><a href="#case-studies">Case studies</a><a href="#feedback">Feedback</a><a href="#venture">Kitab Guru</a><a href="#community">Community</a><a href="#credentials">Certifications</a><a href="#education">Education</a></div></div></nav>
 
 <div class="wrap">
 
@@ -1522,129 +1575,183 @@
     </div>
   </section>
 
-  <section id="case-studies">
-<div class="section-head"><span class="section-num mono">05</span><h2>Selected Technical Case Studies</h2></div>
-<p class="section-intro">Examples from my Website Support Specialist role at Vendasta. Dated cases appear newest first. Each outcome reflects the available case notes, including pending work and team collaboration.</p>
-<div class="case-grid"><article class="case-card">
-        <span class="case-label">WordPress Security &middot; 10 Sep 2026 · Escalated</span>
-        <h3>Investigated a complex SEO-spam compromise</h3>
-        <p class="case-step"><strong>Problem:</strong> Search results showed unexpected foreign-language spam, while standard security reporting showed no active warning.</p>
-        <p class="case-step"><strong>Diagnosis:</strong> Ran a full security scan and identified a compromised configuration file, modified core files, webshells, backdoor plugins, and disguised malicious files.</p>
-        <p class="case-step"><strong>Action:</strong> Documented the findings, preserved the evidence, advised against further changes, and escalated the incident to the backend security team for specialist cleanup.</p>
-        <a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Request%20for%20redacted%20case-study%20evidence">Request redacted evidence &rarr;</a>
-      </article>
-<article class="case-card">
-        <span class="case-label">Email Deliverability &middot; 10 Sep 2026 · Delivery restored</span>
-        <h3>Recovered missing form notifications</h3>
-        <p class="case-step"><strong>Problem:</strong> Valid website-form submissions were no longer generating email notifications.</p>
-        <p class="case-step"><strong>Diagnosis:</strong> Traced the failure to a recipient address placed on a suppression list after an earlier delivery bounce.</p>
-        <p class="case-step"><strong>Result:</strong> Removed the suppression, tested delivery successfully, explained a fallback monitoring path, and raised the partner's alerting request internally.</p>
-        <a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Request%20for%20redacted%20case-study%20evidence">Request redacted evidence &rarr;</a>
-      </article>
-<article class="case-card">
-<span class="case-label">10 Sep 2026 · Resolved</span>
-<h3>Restored missing WordPress core files</h3>
-<p class="case-step"><strong>Problem:</strong> Backend login returned “No input file specified” despite full product permissions.</p>
-<p class="case-step"><strong>My contribution:</strong> Reproduced the error and worked with the internal team to trace it to missing WordPress core files. Restored those files from a backup.</p>
-<p class="case-step"><strong>Outcome:</strong> Backend access was restored.</p>
-<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Restored%20missing%20WordPress%20core%20files">Request redacted evidence &rarr;</a>
-</article>
-<article class="case-card">
-        <span class="case-label">DNS &amp; Domain Verification &middot; 9 Sep 2026 · Verification confirmed</span>
-        <h3>Resolved a custom-domain publishing failure</h3>
-        <p class="case-step"><strong>Problem:</strong> Website edits were not appearing on the live custom domain even though the application configuration appeared correct.</p>
-        <p class="case-step"><strong>Diagnosis:</strong> Found a stale verification record and a duplicate domain record that continued serving the older website.</p>
-        <p class="case-step"><strong>Result:</strong> Guided the partner through DNS corrections during a live call and confirmed successful domain verification.</p>
-        <a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Request%20for%20redacted%20case-study%20evidence">Request redacted evidence &rarr;</a>
-      </article>
-<article class="case-card">
-        <span class="case-label">SFTP &amp; Plugin Debugging &middot; 8 Sep 2026 · Resolved</span>
-        <h3>Restored WordPress administrator access</h3>
-        <p class="case-step"><strong>Problem:</strong> Administrator access had failed for two days, and standard troubleshooting had not fixed it.</p>
-        <p class="case-step"><strong>Diagnosis:</strong> Accessed the backend through SFTP and isolated plugins systematically until identifying an authentication-plugin conflict.</p>
-        <p class="case-step"><strong>Result:</strong> Disabled the conflicting plugin, restored administrator access, and confirmed the recovery with the partner.</p>
-        <a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Request%20for%20redacted%20case-study%20evidence">Request redacted evidence &rarr;</a>
-      </article>
-<article class="case-card">
-<span class="case-label">21–26 May 2026 · Follow-up completed</span>
-<h3>Identified missing reCAPTCHA keys after recurring form spam</h3>
-<p class="case-step"><strong>Problem:</strong> Spam submissions continued after an earlier team-led form configuration change.</p>
-<p class="case-step"><strong>My contribution:</strong> Checked the form on 21 May, found the reCAPTCHA keys missing, and provided illustrated configuration guidance. Reviewed submissions again on 26 May after the partner reported adding the keys.</p>
-<p class="case-step"><strong>Outcome:</strong> No spam was visible at the follow-up check. Closed the ticket with guidance to report recurrence; long-term prevention was not confirmed.</p>
-<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Identified%20missing%20reCAPTCHA%20keys%20after%20recurring%20form%20spam">Request redacted evidence &rarr;</a>
-</article></div>
-<details class="performance-details" style="margin-top:20px">
-<summary>More technical work · 8 cases awaiting date confirmation</summary>
-<p class="case-privacy">These notes did not include task dates, so they are grouped separately from the dated timeline.</p>
-<div class="case-grid" style="margin-top:14px"><article class="case-card">
-<span class="case-label">Date to confirm · Completed</span>
-<h3>Recovered a website from a backup archive</h3>
-<p class="case-step"><strong>Problem:</strong> A partner needed a website imported from a supplied backup ZIP.</p>
-<p class="case-step"><strong>My contribution:</strong> Obtained access to the backup and performed the website import.</p>
-<p class="case-step"><strong>Outcome:</strong> Confirmed the imported website was live.</p>
-<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Recovered%20a%20website%20from%20a%20backup%20archive">Request redacted evidence &rarr;</a>
-</article>
-<article class="case-card">
-<span class="case-label">Date to confirm · Resolved</span>
-<h3>Verified SFTP access through hands-on testing</h3>
-<p class="case-step"><strong>Problem:</strong> A partner could not connect and believed an SSH key was required.</p>
-<p class="case-step"><strong>My contribution:</strong> Created a test user, verified the connection in FileZilla, and shared the working username/password connection settings with a reference screenshot.</p>
-<p class="case-step"><strong>Outcome:</strong> The partner confirmed successful access.</p>
-<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Verified%20SFTP%20access%20through%20hands-on%20testing">Request redacted evidence &rarr;</a>
-</article>
-<article class="case-card">
-<span class="case-label">Date to confirm · Awaiting partner</span>
-<h3>Assessed plugin compatibility before a PHP 8.3 upgrade</h3>
-<p class="case-step"><strong>Problem:</strong> A website needed an upgrade readiness assessment.</p>
-<p class="case-step"><strong>My contribution:</strong> Ran a compatibility scan, identified an outdated licensed form plugin and an unsupported SEO plugin, and recommended updating the former and retiring the latter in favor of the existing alternative.</p>
-<p class="case-step"><strong>Outcome:</strong> Upgrade paused pending the partner's licensing and plugin decisions.</p>
-<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Assessed%20plugin%20compatibility%20before%20a%20PHP%208.3%20upgrade">Request redacted evidence &rarr;</a>
-</article>
-<article class="case-card">
-<span class="case-label">Date to confirm · Guidance provided</span>
-<h3>Diagnosed a stale custom-domain and SSL binding</h3>
-<p class="case-step"><strong>Problem:</strong> A custom domain served routes from an old project while the current project's native URL worked.</p>
-<p class="case-step"><strong>My contribution:</strong> Investigated with the internal team, identified the old binding, and explained which project-specific DNS records to remove before reconnecting the correct project, preserving unrelated email records.</p>
-<p class="case-step"><strong>Outcome:</strong> Provided a targeted remediation plan; final activation was not confirmed in the available notes.</p>
-<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Diagnosed%20a%20stale%20custom-domain%20and%20SSL%20binding">Request redacted evidence &rarr;</a>
-</article>
-<article class="case-card">
-<span class="case-label">Date to confirm · Investigation ongoing</span>
-<h3>Investigated a push-notification script configuration</h3>
-<p class="case-step"><strong>Problem:</strong> A partner needed a JavaScript file uploaded but could not access the website files.</p>
-<p class="case-step"><strong>My contribution:</strong> Uploaded the file through SFTP to the confirmed root, compared it with the plugin configuration, and corrected a syntax discrepancy.</p>
-<p class="case-step"><strong>Outcome:</strong> Push notifications still failed in the final test; the partner planned developer follow-up.</p>
-<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Investigated%20a%20push-notification%20script%20configuration">Request redacted evidence &rarr;</a>
-</article>
-<article class="case-card">
-<span class="case-label">Date to confirm · Delivery restored</span>
-<h3>Restored form emails blocked by recipient suppression</h3>
-<p class="case-step"><strong>Problem:</strong> Form notifications had stopped reaching a recipient after earlier delivery failures.</p>
-<p class="case-step"><strong>My contribution:</strong> Checked email history, identified the suppressed recipient, corrected the earlier account-association misunderstanding, and removed the address from the bounce list.</p>
-<p class="case-step"><strong>Outcome:</strong> The partner confirmed email delivery resumed. A request for a wider affected-recipient list remained pending.</p>
-<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Restored%20form%20emails%20blocked%20by%20recipient%20suppression">Request redacted evidence &rarr;</a>
-</article>
-<article class="case-card">
-<span class="case-label">Date to confirm · Checks completed</span>
-<h3>Checked email delivery and raised a visibility request</h3>
-<p class="case-step"><strong>Problem:</strong> A partner needed confirmation of sender-domain setup and welcome-email delivery.</p>
-<p class="case-step"><strong>My contribution:</strong> Verified the domain, checked delivery and open events for selected messages, and explained the limits of the customer-facing reporting view.</p>
-<p class="case-step"><strong>Outcome:</strong> Confirmed the messages checked were delivered and logged a product feature request for delivery-status visibility.</p>
-<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Checked%20email%20delivery%20and%20raised%20a%20visibility%20request">Request redacted evidence &rarr;</a>
-</article>
-<article class="case-card">
-<span class="case-label">Date to confirm · Completed</span>
-<h3>Updated a website's robots.txt file</h3>
-<p class="case-step"><strong>Problem:</strong> A partner needed a new robots.txt uploaded after confusion with a previous file request.</p>
-<p class="case-step"><strong>My contribution:</strong> Clarified the required file, uploaded it to the website root, and provided a confirmation screenshot.</p>
-<p class="case-step"><strong>Outcome:</strong> The partner acknowledged receipt.</p>
-<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Updated%20a%20website's%20robots.txt%20file">Request redacted evidence &rarr;</a>
-</article></div>
-</details>
-<p class="case-privacy">Customer identities, domains, ticket references, internal links, and sensitive infrastructure details are withheld. Redacted supporting records may be shared during recruitment where permitted.</p>
-</section>
+  <section id="case-studies"><div class="section-head"><span class="section-num mono">05</span><h2>Technical Case Studies</h2></div>
+<p class="section-intro">Real support work at Vendasta, with the investigation, my contribution, and the documented outcome. Dated cases are listed newest first.</p>
+<p class="complexity-key"><strong>Complexity guide:</strong> Focused: a defined task or configuration check. Intermediate: diagnosis across several settings or delivery stages. Complex: multiple components, recovery work, or specialist coordination. These labels describe the documented work, not a measured skill score.</p>
+<div class="case-controls"><button type="button" id="expand-cases">Expand all stories</button><button type="button" id="collapse-cases">Collapse all stories</button><a href="#undated-cases">More case studies &darr;</a></div>
+<div class="case-grid"><article class="case-card case-complex" id="case-security">
+<div class="case-meta"><span class="case-label">10 Sep 2026</span><span class="complexity">Complex complexity</span></div>
+<p class="case-topic">Security incident</p><h3>Investigating a compromise across WordPress files</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Security triage · Evidence collection · Escalation judgment</p>
+<p class="case-status">Escalated for specialist cleanup</p>
+<details class="case-story" open><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>Search results showed Japanese-language SEO spam associated with a customer's website, even though Google Search Console showed no security issues. The partner also reported unfamiliar plugins and a suspicious ZIP-based plugin installation. These conflicting signals required checking the website itself rather than treating the absence of a Search Console warning as reassurance.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I ran a full Wordfence scan, which returned 123 findings. The findings included a configuration file flagged as malicious, a modified core index file, backdoor plugins and must-use plugins, standalone webshells, and suspicious files hidden in duplicated core folders. I reviewed the findings and documented evidence of compromise across several parts of the installation; the scan count was not a count of confirmed separate infections.</p></div>
+<div class="story-step"><h4>My action</h4><p>Given the spread and severity of the findings, I escalated the case to the backend/security team for specialist cleanup. I advised the partner to avoid further plugin changes so the investigation evidence would be preserved.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The documented outcome was a security escalation supported by detailed findings. The supplied notes do not confirm completed cleanup or a clean post-remediation scan, so I do not present this as a fully resolved incident.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Investigating%20a%20compromise%20across%20WordPress%20files">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-intermediate" id="case-email">
+<div class="case-meta"><span class="case-label">10 Sep 2026</span><span class="complexity">Intermediate complexity</span></div>
+<p class="case-topic">Email delivery</p><h3>Restoring form notifications blocked by a bounce suppression</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Delivery tracing · Root-cause isolation · Customer guidance</p>
+<p class="case-status">Delivery restored</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>Website forms were collecting submissions, but the intended recipient was not receiving notification emails. The investigation needed to separate the submission itself from the downstream email-delivery problem.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I found that an earlier delivery failure had placed the recipient on the suppression/bounce list. This explained why new notifications were silently blocked even though the form was still accepting submissions.</p></div>
+<div class="story-step"><h4>My action</h4><p>I removed the recipient from the suppression list and tested delivery. I also explained how the partner could use the Conversations/Contacts view to check submissions when email visibility was unreliable.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The delivery test succeeded and I provided a screenshot. The partner separately requested alerts for future bounce-list entries; I committed to follow up internally. That alerting request was separate from the restored email delivery.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Restoring%20form%20notifications%20blocked%20by%20a%20bounce%20suppression">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-complex" id="case-core">
+<div class="case-meta"><span class="case-label">10 Sep 2026</span><span class="complexity">Complex complexity</span></div>
+<p class="case-topic">Site recovery</p><h3>Recovering backend access after missing WordPress core files</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Error reproduction · Team diagnosis · Backup recovery</p>
+<p class="case-status">Access restored</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>The public website loaded normally, but the customer could not access its backend despite having full product permissions. The reported “no inputs” error was not sufficient to identify whether this was an account-access or website-runtime failure.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I reproduced the exact “No input file specified” response through direct backend access. I escalated internally and worked with the team to trace the issue to missing WordPress core files in the installation folder.</p></div>
+<div class="story-step"><h4>My action</h4><p>I restored the missing core files from a backup. The intervention addressed the files behind the backend error rather than changing permissions that were already present.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The error was resolved and backend access was restored. Diagnosis involved the internal team; this case demonstrates my contribution to reproduction, collaborative investigation, and recovery.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Recovering%20backend%20access%20after%20missing%20WordPress%20core%20files">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-intermediate" id="case-domain">
+<div class="case-meta"><span class="case-label">9 Sep 2026</span><span class="complexity">Intermediate complexity</span></div>
+<p class="case-topic">DNS troubleshooting</p><h3>Unblocking custom-domain verification for a published site</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> DNS inspection · Live-call troubleshooting</p>
+<p class="case-status">Verification confirmed</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>Changes to a published application were not appearing on its custom domain. The website team had already checked the application-side domain configuration, narrowing the investigation toward DNS.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I reviewed the records directly and found a stale verification CNAME plus a duplicate www CNAME associated with the old website. This gave the partner specific records to inspect instead of waiting indefinitely for propagation.</p></div>
+<div class="story-step"><h4>My action</h4><p>On a live call, I guided the partner through correcting the verification record and removing the outdated www record.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>Domain verification succeeded. The supplied notes confirm that verification milestone; they do not separately document an end-to-end test of every published change.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Unblocking%20custom-domain%20verification%20for%20a%20published%20site">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-complex" id="case-plugin">
+<div class="case-meta"><span class="case-label">8 Sep 2026</span><span class="complexity">Complex complexity</span></div>
+<p class="case-topic">Plugin isolation</p><h3>Restoring WordPress admin access through SFTP investigation</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> SFTP · Systematic isolation · Authentication troubleshooting</p>
+<p class="case-status">Access restored</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>The WordPress Admin button had not opened the editor for two days. Previous cache clearing and direct wp-admin attempts had not restored access, so repeating the same login steps would not have established the cause.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I accessed the backend through SFTP and systematically ruled out plugins one at a time. The investigation isolated the failure to a REST API authentication plugin.</p></div>
+<div class="story-step"><h4>My action</h4><p>I disabled the identified plugin and checked backend access again. This linked the restored access to a specific component rather than an unexplained general reset.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>Administrator access was restored, and I shared a screenshot confirming the fix. The record demonstrates targeted plugin isolation through an alternative access path when the dashboard itself was unavailable.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Restoring%20WordPress%20admin%20access%20through%20SFTP%20investigation">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-intermediate" id="case-captcha">
+<div class="case-meta"><span class="case-label">21–26 May 2026</span><span class="complexity">Intermediate complexity</span></div>
+<p class="case-topic">Form protection</p><h3>Finding missing reCAPTCHA keys after recurring spam</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Configuration validation · Follow-through</p>
+<p class="case-status">Follow-up completed</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>The customer continued receiving apparent spam submissions after an earlier team-led reCAPTCHA configuration change. My contribution was the follow-up investigation, not the earlier migration performed by a teammate.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>On 21 May, I checked the form and found that the reCAPTCHA keys were not added. I supplied screenshot-based guidance asking the partner to configure the v3 keys.</p></div>
+<div class="story-step"><h4>My action</h4><p>The partner reported on 26 May that they believed the keys had been added and wanted to monitor the results. I then checked the submissions visible at that time.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>No spam was visible during my follow-up check, and I closed the ticket with an invitation to report recurrence. This was a point-in-time observation, not a guarantee that all future spam would be prevented.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Finding%20missing%20reCAPTCHA%20keys%20after%20recurring%20spam">Request redacted evidence &rarr;</a>
+</details></article></div>
+<details class="performance-details" id="undated-cases" style="margin-top:24px"><summary>More technical work · 8 cases with dates to confirm</summary>
+<p class="case-privacy">Task dates were not included in these notes. They remain separate from the dated timeline.</p>
+<div class="case-grid" style="margin-top:14px"><article class="case-card case-focused" id="case-import">
+<div class="case-meta"><span class="case-label">Date to confirm</span><span class="complexity">Focused complexity</span></div>
+<p class="case-topic">Website migration</p><h3>Importing a website from a supplied backup archive</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Backup handling · Website import</p>
+<p class="case-status">Import completed</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>A partner requested a website import from a supplied backup ZIP.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I requested and obtained the backend access needed to use the backup file.</p></div>
+<div class="story-step"><h4>My action</h4><p>I performed the import and checked the resulting hosted website.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The imported website was confirmed live. The notes do not include additional migration testing or timing metrics.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Importing%20a%20website%20from%20a%20supplied%20backup%20archive">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-focused" id="case-sftp">
+<div class="case-meta"><span class="case-label">Date to confirm</span><span class="complexity">Focused complexity</span></div>
+<p class="case-topic">Connection troubleshooting</p><h3>Testing SFTP access to resolve a connection blocker</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> FileZilla · Reproduction · Clear instructions</p>
+<p class="case-status">Partner confirmed access</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>The partner could not connect through SFTP and believed an SSH key file was required.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I created a test user and personally tested the connection in FileZilla. For this connection, username and password authentication worked without an SSH key.</p></div>
+<div class="story-step"><h4>My action</h4><p>I shared the working connection settings and a screenshot so the partner could compare their setup with a tested example.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The partner confirmed that the connection worked on their side.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Testing%20SFTP%20access%20to%20resolve%20a%20connection%20blocker">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-intermediate" id="case-php">
+<div class="case-meta"><span class="case-label">Date to confirm</span><span class="complexity">Intermediate complexity</span></div>
+<p class="case-topic">Upgrade readiness</p><h3>Assessing plugin blockers before a PHP 8.3 upgrade</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Compatibility assessment · Change planning</p>
+<p class="case-status">Awaiting partner decisions</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>The partner needed to decide how to proceed before a PHP 8.3 deadline. Upgrading required checking whether the installed plugins were ready.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>My compatibility scan identified an outdated Gravity Forms version and an SEO Ultimate installation without PHP 8.3 support or recent updates.</p></div>
+<div class="story-step"><h4>My action</h4><p>I requested renewal or reconnection of the Gravity Forms license so it could be updated. I recommended deactivating SEO Ultimate in favor of Yoast SEO, which was already active on the site.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The upgrade remained paused pending the partner's decisions. This demonstrates readiness assessment and communication of blockers, not a completed upgrade.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Assessing%20plugin%20blockers%20before%20a%20PHP%208.3%20upgrade">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-complex" id="case-binding">
+<div class="case-meta"><span class="case-label">Date to confirm</span><span class="complexity">Complex complexity</span></div>
+<p class="case-topic">Domain and SSL routing</p><h3>Tracing a custom domain still bound to an older project</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Cross-team investigation · DNS change scoping</p>
+<p class="case-status">Remediation guidance provided</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>The custom domain continued serving routes from an old project, while the current project worked through its native URL. The difference pointed toward the custom-domain path rather than a general application failure.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I investigated with the internal team and identified leftover domain configuration and an SSL certificate binding associated with the old project.</p></div>
+<div class="story-step"><h4>My action</h4><p>I advised removing the old custom-domain configuration and its three associated DNS records, then adding the domain to the correct project so a fresh binding and certificate could provision. Before proceeding, I confirmed exactly which records were involved to avoid disrupting unrelated email or DNS configuration.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The notes document the diagnosis and guided remediation plan. They do not confirm final certificate provisioning or a successful live-site retest.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Tracing%20a%20custom%20domain%20still%20bound%20to%20an%20older%20project">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-intermediate" id="case-push">
+<div class="case-meta"><span class="case-label">Date to confirm</span><span class="complexity">Intermediate complexity</span></div>
+<p class="case-topic">JavaScript investigation</p><h3>Investigating a push-notification script after a root-file upload</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> SFTP · Configuration comparison · Scope communication</p>
+<p class="case-status">Developer follow-up pending</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>The partner needed a JavaScript file placed at the website root for push notifications and could not upload it through SFTP or the WordPress file manager.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I connected through SFTP and uploaded the file to the confirmed root directory. When notifications still failed, I compared the uploaded script line by line with the plugin's suggested configuration and found a punctuation/quotation discrepancy.</p></div>
+<div class="story-step"><h4>My action</h4><p>I corrected the syntax discrepancy and confirmed the actual root directory for the partner's developer.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The notification test still did not work at the end of the conversation. The partner planned to continue with their developer. I present this as an investigation and correction, not a completed notification fix.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Investigating%20a%20push-notification%20script%20after%20a%20root-file%20upload">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-intermediate" id="case-suppression">
+<div class="case-meta"><span class="case-label">Date to confirm</span><span class="complexity">Intermediate complexity</span></div>
+<p class="case-topic">Email recovery</p><h3>Tracing a long-running form-notification delivery failure</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Email history review · Customer confirmation</p>
+<p class="case-status">Delivery restored; audit pending</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>Form notifications had not reached a particular recipient since 3 July. An earlier response had incorrectly stated that the address was not associated with the account.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I checked the email history and found delivery bounces followed by suppression beginning on 3 July. This established that the recipient existed in the delivery history and explained why notifications stopped.</p></div>
+<div class="story-step"><h4>My action</h4><p>I removed the recipient from the bounce list and checked the outcome with the partner.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The partner confirmed delivery resumed. Their request for a full list of other bounced or blocked recipients remained pending. The 3 July date describes the reported start of the problem, not a confirmed date for my work.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Tracing%20a%20long-running%20form-notification%20delivery%20failure">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-intermediate" id="case-visibility">
+<div class="case-meta"><span class="case-label">Date to confirm</span><span class="complexity">Intermediate complexity</span></div>
+<p class="case-topic">Delivery investigation</p><h3>Verifying welcome-email delivery and documenting a reporting gap</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Event verification · Product feedback</p>
+<p class="case-status">Delivery checks completed</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>The partner wanted confirmation that their sender-domain setup was correct and wanted to see welcome-email opens and bounces across customer accounts.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I verified the domain configuration in the platform and inspected delivery records for the specific messages they asked about. Those checks showed successful delivery and open events.</p></div>
+<div class="story-step"><h4>My action</h4><p>I communicated the results for the users checked and explained that the requested welcome-email reporting view was not available in Partner Center. I logged that visibility requirement as a product feature request.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The checked messages had delivery confirmation. The feature request was recorded; the notes do not claim that a new reporting feature was implemented.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Verifying%20welcome-email%20delivery%20and%20documenting%20a%20reporting%20gap">Request redacted evidence &rarr;</a>
+</details></article>
+<article class="case-card case-focused" id="case-robots">
+<div class="case-meta"><span class="case-label">Date to confirm</span><span class="complexity">Focused complexity</span></div>
+<p class="case-topic">Website file management</p><h3>Clarifying and uploading an updated robots.txt</h3>
+<p class="case-ability"><strong>Skills demonstrated:</strong> Request clarification · File deployment</p>
+<p class="case-status">Upload completed</p>
+<details class="case-story"><summary>Read investigation and outcome</summary>
+<div class="story-step"><h4>Problem and context</h4><p>The partner requested an updated robots.txt, but an earlier reply had confused it with a previous llms.txt request.</p></div>
+<div class="story-step"><h4>Diagnosis and evidence</h4><p>I clarified which file and version the partner wanted before making the change.</p></div>
+<div class="story-step"><h4>My action</h4><p>I uploaded the supplied robots.txt to the website root and sent a confirmation screenshot.</p></div>
+<div class="story-step"><h4>Outcome and limits</h4><p>The partner acknowledged receipt. No search-indexing improvement is claimed from the upload alone.</p></div>
+<a class="case-proof-link" href="mailto:aazam0067@gmail.com?subject=Evidence%20request%3A%20Clarifying%20and%20uploading%20an%20updated%20robots.txt">Request redacted evidence &rarr;</a>
+</details></article></div></details>
+<p class="case-privacy">Customer identities, private domains, ticket references, and internal links are withheld. Supporting records may be shared in redacted form where permitted.</p></section>
 
-  <section id="feedback">
+<section id="feedback">
     <div class="section-head">
       <span class="section-num mono">06</span>
       <h2>What Vendasta Agency Partners Say</h2>
@@ -1802,7 +1909,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer id="page-bottom" tabindex="-1">
     <p>Available for remote technical support, website support, and SaaS support roles.</p>
     <div class="footer-links">
       <a href="mailto:aazam0067@gmail.com">Email me</a>
@@ -1813,5 +1920,14 @@
 
 </div>
 
+<div class="jump-controls" aria-label="Page shortcuts">
+<a href="#page-top" aria-label="Jump to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 14 7-7 7 7"/></svg>Top</a>
+<a href="#page-bottom" aria-label="Jump to bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 10 7 7 7-7"/></svg>Bottom</a></div>
+<script>
+document.querySelectorAll('.mobile-menu a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.mobile-menu').open=false;});});
+document.getElementById('expand-cases').addEventListener('click',function(){document.querySelectorAll('#case-studies details').forEach(function(d){d.open=true;});});
+document.getElementById('collapse-cases').addEventListener('click',function(){document.querySelectorAll('#case-studies details').forEach(function(d){d.open=false;});});
+document.querySelector('.case-controls a').addEventListener('click',function(){document.getElementById('undated-cases').open=true;});
+</script>
 </body>
 </html>
