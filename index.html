@@ -1294,7 +1294,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
 .contact-options a:hover{background:var(--accent-soft)}
 .contact-options span{font-size:12px;color:var(--ink-soft)}
 @media(max-width:700px){.contact-options{left:0;right:auto}}
-</style>
+.reader-links>button{padding:10px 15px;border:1px solid #c9dacf;border-radius:10px;background:var(--accent-dark);color:white;font:inherit;font-size:14px;cursor:pointer}</style>
 </head>
 <body id="page-top">
 <nav class="section-nav" aria-label="Portfolio sections"><div class="nav-inner">
@@ -1338,7 +1338,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
 <p class="summary">I help customers get back to work when software behaves unexpectedly. At Vendasta, I investigate website, access, and email problems, test fixes, and explain the next steps in plain language. I have supported international customers and agency partners here since August 2022.</p>
 <p class="summary-stats-label">Selected outcomes from my support case records</p><div class="outcome-grid"><a class="outcome-card" href="#case-divi-upload"><span class="outcome-icon" aria-hidden="true">✓</span><strong>Unblocked website editing</strong><p>Tested a theme change to restore image uploads. The partner confirmed the issue was resolved.</p><span>Read the confirmed resolution →</span></a><a class="outcome-card" href="#case-email"><span class="outcome-icon" aria-hidden="true">✉</span><strong>Restored form emails</strong><p>Found a recipient on the bounce list, removed the block, and successfully tested delivery.</p><span>Read the delivery investigation →</span></a><a class="outcome-card" href="#case-email-authentication"><span class="outcome-icon" aria-hidden="true">⌕</span><strong>Explained a complex email failure</strong><p>Explained the team’s authentication fix and the separate recipient-security block, with next steps for IT.</p><span>Read the technical handoff →</span></a></div>
 <p class="evidence-note">Each summary links to the problem, my contribution, and the recorded outcome. Customer details are withheld. Redacted supporting records can be discussed where sharing is permitted.</p>
-<div class="reader-links"><a href="#case-studies">Explore my work</a><a href="#experience">View experience</a><a href="#recognition">See performance records</a><details class="contact-picker" id="contact-options"><summary>Contact me <span aria-hidden="true">▾</span></summary><div class="contact-options"><a href="mailto:aazam0067@gmail.com"><strong>Email</strong><span>aazam0067@gmail.com</span></a><a href="https://www.linkedin.com/in/aazam-ansari/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong><span>View my profile and connect</span></a><a href="https://wa.me/917294998922" target="_blank" rel="noopener noreferrer"><strong>WhatsApp</strong><span>Start a chat</span></a></div></details></div></section>
+<div class="reader-links"><button type="button" data-download-cv>Download CV (PDF)</button><a href="#case-studies">Explore my work</a><a href="#experience">View experience</a><a href="#recognition">See performance records</a><details class="contact-picker" id="contact-options"><summary>Contact me <span aria-hidden="true">▾</span></summary><div class="contact-options"><a href="mailto:aazam0067@gmail.com"><strong>Email</strong><span>aazam0067@gmail.com</span></a><a href="https://www.linkedin.com/in/aazam-ansari/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong><span>View my profile and connect</span></a><a href="https://wa.me/917294998922" target="_blank" rel="noopener noreferrer"><strong>WhatsApp</strong><span>Start a chat</span></a></div></details></div></section>
 <section id="case-studies"><div class="section-head"><span class="section-num mono">02</span><h2>Troubleshooting in practice</h2></div>
 <p class="section-intro">Choose a case to see what went wrong, how it was investigated, and what happened next. Dated cases appear newest first. Each story identifies my work and any contribution from teammates.</p>
 <details class="complexity-key"><summary>What do the technical levels mean?</summary><p>Focused: a defined task. Intermediate: several settings or components to check. Complex: recovery work or investigation across systems. These describe the case, not a measured skill score.</p></details>
@@ -1610,7 +1610,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
     <div class="skills-list">
       <div class="skill-row">
         <span class="skill-label">web &amp; infra</span>
-        <span class="skill-detail">WordPress, WooCommerce, DNS, SSL/TLS, domains, Nginx hosting, Cloudflare, cPanel, GCP, SFTP</span>
+        <span class="skill-detail">WordPress, WooCommerce, DNS, SSL/TLS, domains, Nginx hosting, Cloudflare, cPanel, GCP/PHP log review, SFTP</span>
       </div>
       <div class="skill-row">
         <span class="skill-label">email</span>
@@ -1618,15 +1618,15 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
       </div>
       <div class="skill-row">
         <span class="skill-label">api &amp; debug</span>
-        <span class="skill-detail">REST APIs, Postman, Chrome DevTools, HAR analysis, PHP error logs, phpMyAdmin, MySQL imports</span>
+        <span class="skill-detail">REST API testing with Postman, HTTP responses, JSON payloads, Chrome DevTools, console and network inspection, HAR analysis, SSO concepts</span>
       </div>
       <div class="skill-row">
         <span class="skill-label">platforms</span>
-        <span class="skill-detail">Zendesk, Jira, Freshdesk, HubSpot, Trello, Zapier, Google Workspace, Slack</span>
+        <span class="skill-detail">Zendesk, Jira, Slack, Confluence, Freshdesk, Trello, Google Workspace</span>
       </div>
       <div class="skill-row">
         <span class="skill-label">learning</span>
-        <span class="skill-detail">HTML, CSS, JavaScript, PHP, and SQL fundamentals applied through hands-on troubleshooting</span>
+        <span class="skill-detail">HTML, CSS, JavaScript and PHP: inspect snippets, errors and configuration. Foundational SQL: SELECT and filtering; understanding of JOINs, GROUP BY and aggregations. Data tasks: phpMyAdmin and MySQL imports.</span>
       </div>
       <div class="skill-row">
         <span class="skill-label">ai-assisted</span>
@@ -1654,6 +1654,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
         <li>Proactively audited all 27 websites after a customer reported backup failures on two sites, identifying another affected site before it was reported.</li>
         <li>Restored image editing by testing a theme change, with the partner confirming the result. <a href="#case-divi-upload">Read the case</a>.</li>
         <li>Review PHP logs, browser network activity, and site configuration; reproduce issues on test sites and coordinate escalations with backend and engineering teams.</li>
+<li>Compare working and affected environments to distinguish configuration, integration, data, user-behavior and product issues.</li>
+<li>Prepare Jira escalations with reproduction steps, expected and actual behavior, customer impact, logs, screenshots and investigation results; coordinate through Slack with Product, Engineering and backend specialists.</li>
+<li>Prioritize concurrent Zendesk cases by SLA and customer impact, and follow escalations through validation and closure.</li>
+<li>Turn recurring issues into reusable investigation notes, troubleshooting guidance and Confluence documentation.</li>
         <li>Mentor new team members and help standardize support workflows, macros, and AI-assisted troubleshooting scenarios.</li>
       </ul>
     </div>
@@ -1745,7 +1749,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
       <article class="win-card">
         <span class="win-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v4a5 5 0 0 1-10 0V4Z"></path><path d="M7 6H4v1a4 4 0 0 0 4 4M17 6h3v1a4 4 0 0 1-4 4"></path></svg> #1 Top Performer</span>
         <h3>October 2025</h3>
-        <div class="win-numbers"><span>231 tickets</span><span>96.6% CSAT</span></div>
+        <div class="win-numbers"><span>231 total ticket credits</span><span>228 solved + 3 bug credits</span><span>96.6% CSAT</span></div>
         <span class="win-date">Final leaderboard &middot; 5 Nov 2025</span>
       </article>
       <article class="win-card">
@@ -1895,7 +1899,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
       </div>
       <p>Co-run an independent online ebook store, managing customer support, order fulfilment,
         website operations, and worldwide digital delivery end-to-end.</p>
-      <a class="venture-link" href="https://kitabguru.com" target="_blank" rel="noopener">Visit kitabguru.com</a>
+      <p><strong>Technical project: book pricing and quote workflow.</strong> Built and tested a browser-based workflow using external book data, multi-country currency logic, HTML, CSS, JavaScript and Google Apps Script. Connected submissions to Google Sheets and email, investigated browser-side failures with DevTools, and used AI-assisted coding with manual validation.</p><p><strong>Personal business tools:</strong> Used HubSpot’s free tier for campaigns and website live chat, with social messaging integrations. This experience comes from Kitab Guru.</p><a class="venture-link" href="https://kitabguru.com/#price-calculator" target="_blank" rel="noopener">Try the pricing project &rarr;</a><a class="venture-link" href="https://kitabguru.com" target="_blank" rel="noopener">Visit kitabguru.com</a>
       <a class="venture-link" href="https://kitabguru.com/#reviews" target="_blank" rel="noopener">View Google &amp; Facebook reviews</a>
       <div class="venture-stats">
         <div><strong>1,700+</strong>readers</div>
@@ -1913,7 +1917,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
     <div class="venture">
       <div class="venture-top">
         <span class="venture-title"><a href="https://wordpress.com/forums/users/aazam0067/" target="_blank" rel="noopener">WordPress.com Support Forums</a></span>
-        <span class="job-dates mono">Active Contributor Since 2025 &middot; 27 Replies</span>
+        <span class="job-dates mono">Active Contributor Since 2025</span>
       </div>
       <p>Contribute practical, easy-to-follow troubleshooting guidance for WordPress.com users. Profile username: <strong>aazam0067</strong>.</p>
       <a class="venture-link" href="https://wordpress.com/forums/users/aazam0067/" target="_blank" rel="noopener">View WordPress.com profile</a>
@@ -2047,5 +2051,6 @@ document.addEventListener('click',function(event){if(!contactPicker.contains(eve
 contactPicker.addEventListener('keydown',function(event){if(event.key==='Escape'){contactPicker.open=false;contactPicker.querySelector('summary').focus();}});
 contactPicker.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){contactPicker.open=false;});});
 </script>
+<script src="cv-download.js" defer></script>
 </body>
 </html>
