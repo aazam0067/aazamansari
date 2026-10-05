@@ -1306,6 +1306,32 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
 .recovery-evidence figure { margin:14px 0; padding:16px; background:#f4f8f6; border-radius:8px; }
 .recovery-evidence figcaption { font-size:11px; font-weight:700; color:#466455; }
 .recovery-evidence blockquote { margin:8px 0 0; font-size:14px; line-height:1.8; color:var(--ink); }
+
+.ticket-gallery { margin:20px 0; border:1px solid #aecabd; border-radius:12px; padding:0 16px; background:#fff; }
+.ticket-gallery>summary { padding:15px 0; color:#0f5138; cursor:pointer; font-weight:700; font-size:14px; }
+.ticket-evidence-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; padding-bottom:18px; }
+.ticket-evidence-grid figure { margin:0; min-width:0; border:1px solid #d6e3db; border-radius:10px; overflow:hidden; background:#f8fbf9; }
+.ticket-evidence-open { display:block; text-decoration:none; color:#0f5138; background:#fff; }
+.ticket-evidence-open img { display:block; width:100%; height:190px; object-fit:contain; padding:8px; }
+.ticket-evidence-open>span { display:block; padding:9px 12px; background:#e5f4ec; font-size:12px; font-weight:700; }
+.ticket-evidence-grid figcaption { padding:14px; }
+.ticket-evidence-grid figcaption>span { display:block; font-size:11px; color:#51645a; }
+.ticket-evidence-grid figcaption>strong { display:block; margin-top:4px; font-size:14px; }
+.ticket-evidence-grid figcaption p { font-size:12px; line-height:1.7; margin:7px 0 0; color:#45536a; }
+.evidence-dialog { width:min(1200px,96vw); max-width:96vw; max-height:94vh; max-height:94dvh; padding:0; border:1px solid #b3cabc; border-radius:14px; background:#fff; color:#152238; }
+.evidence-dialog::backdrop { background:rgba(9,24,18,.8); }
+.evidence-dialog-bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:12px 16px; border-bottom:1px solid #d6e3db; }
+.evidence-dialog-bar h2 { flex:1 1 200px; margin:0; font-size:15px; }
+.evidence-dialog button { cursor:pointer; border:1px solid #acc7b8; background:#eaf6ef; color:#0f5138; border-radius:7px; padding:9px 12px; font:inherit; font-size:13px; }
+.evidence-dialog button:disabled { opacity:.45; cursor:default; }
+.evidence-image-scroll { overflow:auto; max-height:65vh; max-height:65dvh; padding:14px; background:#edf2ef; }
+.evidence-image-scroll img { display:block; width:100%; height:auto; max-width:none; background:#fff; }
+.evidence-image-scroll.is-zoomed img { width:1800px; }
+.evidence-dialog-caption { margin:0; padding:12px 16px; font-size:13px; }
+.evidence-dialog-controls { display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center; padding:0 16px 14px; }
+.evidence-dialog-controls a { color:#0f5138; font-size:12px; }
+.ticket-evidence-open:focus-visible, .ticket-gallery summary:focus-visible, .evidence-dialog button:focus-visible { outline:3px solid #16835d; outline-offset:3px; }
+@media(max-width:600px){ .ticket-evidence-grid { grid-template-columns:1fr; } .evidence-dialog-bar { padding:10px; } .evidence-image-scroll { padding:6px; max-height:55dvh; } }
 </style>
 </head>
 <body id="page-top">
@@ -1348,7 +1374,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
 
   <section id="summary"><div class="section-head"><span class="section-num mono">01</span><h2>How I help</h2></div>
 <p class="summary">I help customers get back to work when software behaves unexpectedly. At Vendasta, I investigate website, access, and email problems, test fixes, and explain the next steps in plain language. I have supported international customers and agency partners here since August 2022.</p>
-<p class="summary-stats-label">Selected outcomes from my support case records</p><div class="outcome-grid"><a class="outcome-card" href="#case-divi-upload"><span class="outcome-icon" aria-hidden="true">✓</span><strong>Unblocked website editing</strong><p>Tested a theme change to restore image uploads. The partner confirmed the issue was resolved.</p><span>Read the confirmed resolution →</span></a><a class="outcome-card" href="#case-email"><span class="outcome-icon" aria-hidden="true">✉</span><strong>Restored form emails</strong><p>Found a recipient on the bounce list, removed the block, and successfully tested delivery.</p><span>Read the delivery investigation →</span></a><a class="outcome-card" href="#case-account-recovery"><span class="outcome-icon" aria-hidden="true">↺</span><strong>Recovered a deleted-account website</strong><p>Located and copied a site, coordinated recovery checks, and followed through to customer confirmation.</p><span>Read the recovery story and excerpts →</span></a></div>
+<p class="summary-stats-label">Selected outcomes from my support case records</p><div class="outcome-grid"><a class="outcome-card" href="#case-divi-upload"><span class="outcome-icon" aria-hidden="true">✓</span><strong>Unblocked website editing</strong><p>Tested a theme change to restore image uploads. The partner confirmed the issue was resolved.</p><span>Read the confirmed resolution →</span></a><a class="outcome-card" href="#case-email"><span class="outcome-icon" aria-hidden="true">✉</span><strong>Restored form emails</strong><p>Found a recipient on the bounce list, removed the block, and successfully tested delivery.</p><span>Read the delivery investigation →</span></a><a class="outcome-card" href="#case-account-recovery"><span class="outcome-icon" aria-hidden="true">↺</span><strong>Recovered a deleted-account website</strong><p>Located and copied a site, coordinated recovery checks, and followed through to customer confirmation.</p><span>View the recovery story and screenshots →</span></a></div>
 <p class="evidence-note">Each summary links to the problem, my contribution, and the recorded outcome. Customer details are withheld. Redacted supporting records can be discussed where sharing is permitted.</p>
 <div class="reader-links"><button type="button" data-download-cv>Download CV (PDF)</button><a href="#case-studies">Explore my work</a><a href="#experience">View experience</a><a href="#recognition">See performance records</a><details class="contact-picker" id="contact-options"><summary>Contact me <span aria-hidden="true">▾</span></summary><div class="contact-options"><a href="mailto:aazam0067@gmail.com"><strong>Email</strong><span>aazam0067@gmail.com</span></a><a href="https://www.linkedin.com/in/aazam-ansari/" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong><span>View my profile and connect</span></a><a href="https://wa.me/917294998922" target="_blank" rel="noopener noreferrer"><strong>WhatsApp</strong><span>Start a chat</span></a></div></details></div></section>
 <section id="case-studies"><div class="section-head"><span class="section-num mono">02</span><h2>Troubleshooting in practice</h2></div>
@@ -1363,7 +1389,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #16
 <p class="case-ability"><strong>Skills demonstrated:</strong> Account tracing · Hosting recovery · Domain diagnosis · Cross-team coordination · Customer validation</p>
 <p class="case-status">Customer confirmed the result · One page could not be located</p>
 <blockquote class="recovery-quote">“It looks good, thank you for your help”<cite>Customer reply · 24 Sep 2026</cite></blockquote>
-<details class="case-story"><summary>Read the diagnosis, recovery steps and supporting excerpts</summary>
+<details class="ticket-gallery" id="recovery-screenshots"><summary>View 5 original ticket screenshots <span aria-hidden="true">↗</span></summary><p class="evidence-note">Actual screenshots from the support conversation, cropped and permanently redacted to protect customer names, domains, account IDs and unrelated details. Visible message text and dates are unchanged. Select an image to enlarge it; use Zoom for small text.</p><div class="ticket-evidence-grid"><figure><a class="ticket-evidence-open" href="evidence/account-recovery/01-account-identification.svg" target="_blank" rel="noopener" data-evidence-index="0" aria-label="Enlarge screenshot 1: Confirming the recovery target"><img loading="lazy" decoding="async" src="evidence/account-recovery/01-account-identification.svg" width="902" height="758" alt="Redacted original ticket screenshot: Confirming the recovery target"><span>Enlarge screenshot 1 ↗</span></a><figcaption><span>21 Sep 2026</span><strong>Confirming the recovery target</strong><p>I used the default hosting URL to help the customer identify the deleted account before coordinating restoration.</p></figcaption></figure><figure><a class="ticket-evidence-open" href="evidence/account-recovery/02-domain-investigation.svg" target="_blank" rel="noopener" data-evidence-index="1" aria-label="Enlarge screenshot 2: Finding the right hosting environment"><img loading="lazy" decoding="async" src="evidence/account-recovery/02-domain-investigation.svg" width="906" height="813" alt="Redacted original ticket screenshot: Finding the right hosting environment"><span>Enlarge screenshot 2 ↗</span></a><figcaption><span>23 Sep 2026</span><strong>Finding the right hosting environment</strong><p>The customer’s custom domain still pointed to another host. I asked for the actual hosting address and old account details to locate the unfinished site.</p></figcaption></figure><figure><a class="ticket-evidence-open" href="evidence/account-recovery/03-site-recovery.svg" target="_blank" rel="noopener" data-evidence-index="2" aria-label="Enlarge screenshot 3: Locating and copying the deleted site"><img loading="lazy" decoding="async" src="evidence/account-recovery/03-site-recovery.svg" width="904" height="460" alt="Redacted original ticket screenshot: Locating and copying the deleted site"><span>Enlarge screenshot 3 ↗</span></a><figcaption><span>23 Sep 2026</span><strong>Locating and copying the deleted site</strong><p>My response records that I found the old account, copied the site to the replacement account and supplied optional custom-domain DNS instructions.</p></figcaption></figure><figure><a class="ticket-evidence-open" href="evidence/account-recovery/04-page-validation.svg" target="_blank" rel="noopener" data-evidence-index="3" aria-label="Enlarge screenshot 4: Checking the apparently missing pages"><img loading="lazy" decoding="async" src="evidence/account-recovery/04-page-validation.svg" width="677" height="256" alt="Redacted original ticket screenshot: Checking the apparently missing pages"><span>Enlarge screenshot 4 ↗</span></a><figcaption><span>24 Sep 2026</span><strong>Checking the apparently missing pages</strong><p>I explained the team’s menu correction and clearly disclosed that Contact Us could not be located.</p></figcaption></figure><figure><a class="ticket-evidence-open" href="evidence/account-recovery/05-customer-confirmation.svg" target="_blank" rel="noopener" data-evidence-index="4" aria-label="Enlarge screenshot 5: The customer’s final confirmation"><img loading="lazy" decoding="async" src="evidence/account-recovery/05-customer-confirmation.svg" width="677" height="142" alt="Redacted original ticket screenshot: The customer’s final confirmation"><span>Enlarge screenshot 5 ↗</span></a><figcaption><span>24 Sep 2026</span><strong>The customer’s final confirmation</strong><p>The customer replied: “It looks good, thank you for your help”. This followed the disclosure about the missing Contact Us page.</p></figcaption></figure></div></details>
+<details class="case-story"><summary>Read the diagnosis and recovery steps</summary>
 <div class="story-step"><h4>The problem: deleting accounts also disrupted the websites</h4><p>The customer was reorganizing business records into a client list and accidentally deleted two accounts from Manage Accounts. One website had been live; the other was still being built. The request extended beyond the websites to paid products and AI voice/chat settings, so I needed to establish what could be recovered and keep each part of the request with the appropriate team.</p></div>
 <div class="story-step"><h4>21–22 September · Establishing a recovery path</h4><p>I checked with the internal team, asked the customer to confirm the first site's previous account and default hosting URL, and used that URL as a recognizable reference when the account ID was unfamiliar. Once the team confirmed restoration was possible, I guided the customer through creating a replacement account and activating its hosting product. I coordinated the restoration and reported when the first site was available on the new account's default URL. The underlying first-site restoration was a team effort; my role was account verification, recovery coordination and customer guidance.</p></div>
 <div class="story-step"><h4>22–23 September · Why the second site was difficult to find</h4><p>An initial search by the supplied custom domain did not locate the second WordPress site. I clarified the hosting product and asked where the unfinished website had actually been running. The customer explained that the public domain still pointed to GoDaddy while the new site used a default Vendasta hosting address. That distinction changed the investigation: the public domain was not a reliable identifier for the deleted development site.</p><p>I requested the old account/site details or default URL and continued tracing the deleted account. I then located it and copied the site to the replacement account. My response documented that the copied site was live on its new default address, and I supplied A-record and CNAME guidance for a future custom-domain connection. The thread does not establish that the customer completed that DNS change.</p></div>
@@ -2089,5 +2116,40 @@ contactPicker.addEventListener('keydown',function(event){if(event.key==='Escape'
 contactPicker.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){contactPicker.open=false;});});
 </script>
 <script src="cv-download.js" defer></script>
+<dialog class="evidence-dialog" id="ticket-evidence-dialog" aria-labelledby="evidence-dialog-title"><div class="evidence-dialog-bar"><h2 id="evidence-dialog-title">Ticket evidence</h2><button type="button" id="evidence-zoom" aria-pressed="false">Zoom in</button><button type="button" id="evidence-close" aria-label="Close screenshot viewer">Close ✕</button></div><div class="evidence-image-scroll" tabindex="0" aria-label="Screenshot; scroll to read when zoomed"><img id="evidence-full-image" alt=""></div><p class="evidence-dialog-caption" id="evidence-dialog-caption"></p><div class="evidence-dialog-controls"><button type="button" id="evidence-prev">← Previous</button><span id="evidence-position" aria-live="polite"></span><button type="button" id="evidence-next">Next →</button><a id="evidence-original" target="_blank" rel="noopener">Open redacted image in a new tab ↗</a></div></dialog>
+<script>
+(function(){
+var dialog=document.getElementById('ticket-evidence-dialog');
+var links=Array.from(document.querySelectorAll('.ticket-evidence-open'));
+var current=0,opener=null,previousOverflow='';
+var panel=dialog.querySelector('.evidence-image-scroll');
+var zoom=document.getElementById('evidence-zoom');
+function show(index){
+current=index;var link=links[index],figure=link.closest('figure');
+document.getElementById('evidence-full-image').src=link.href;
+document.getElementById('evidence-full-image').alt=link.querySelector('img').alt;
+document.getElementById('evidence-dialog-title').textContent=figure.querySelector('strong').textContent;
+document.getElementById('evidence-dialog-caption').textContent=figure.querySelector('figcaption p').textContent;
+document.getElementById('evidence-original').href=link.href;
+document.getElementById('evidence-position').textContent=(index+1)+' / '+links.length;
+document.getElementById('evidence-prev').disabled=index===0;
+document.getElementById('evidence-next').disabled=index===links.length-1;
+panel.classList.remove('is-zoomed');panel.scrollTop=0;panel.scrollLeft=0;
+zoom.setAttribute('aria-pressed','false');zoom.textContent='Zoom in';
+}
+links.forEach(function(link,index){link.addEventListener('click',function(event){
+if(typeof dialog.showModal!=='function')return;
+event.preventDefault();opener=link;show(index);previousOverflow=document.body.style.overflow;
+dialog.showModal();document.body.style.overflow='hidden';document.getElementById('evidence-close').focus();
+});});
+document.getElementById('evidence-close').addEventListener('click',function(){dialog.close();});
+dialog.addEventListener('close',function(){document.body.style.overflow=previousOverflow;if(opener)opener.focus();});
+dialog.addEventListener('click',function(event){if(event.target===dialog){var r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
+zoom.addEventListener('click',function(){var active=panel.classList.toggle('is-zoomed');zoom.setAttribute('aria-pressed',String(active));zoom.textContent=active?'Fit to screen':'Zoom in';});
+document.getElementById('evidence-prev').addEventListener('click',function(){if(current>0)show(current-1);});
+document.getElementById('evidence-next').addEventListener('click',function(){if(current<links.length-1)show(current+1);});
+dialog.addEventListener('keydown',function(event){if(event.target===panel||panel.classList.contains('is-zoomed'))return;if(event.key==='ArrowRight'&&current<links.length-1){event.preventDefault();show(current+1);}if(event.key==='ArrowLeft'&&current>0){event.preventDefault();show(current-1);}});
+})();
+</script>
 </body>
 </html>
