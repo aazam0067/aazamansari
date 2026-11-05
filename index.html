@@ -1665,22 +1665,22 @@ section { padding:24px 18px; margin-bottom:16px; }
   <div class="section-head"><span class="section-num mono">03</span><h2>HTTP &amp; API troubleshooting</h2></div>
   <p class="section-intro">Selected real support investigations showing how I isolate the source of an error before recommending a workaround or escalating for a product-side fix.</p>
   <div class="case-grid">
-    <article class="case-card"><span class="case-label">HTTP 403 · WordPress security</span><h3>BeBuilder save blocked by Wordfence</h3>
+    <article class="case-card" id="case-http-bebuilder"><span class="case-label">HTTP 403 · WordPress security</span><h3>BeBuilder save blocked by Wordfence</h3>
       <p class="case-step"><strong>Symptom:</strong> The BeBuilder editor returned an Error 403 when saving.</p>
       <p class="case-step"><strong>Investigation:</strong> Checked Wordfence Live Traffic and found the site's own firewall was blocking the save request as a possible XSS attempt.</p>
       <p class="case-step"><strong>Finding:</strong> Identified the relevant <code>sections</code> and <code>obj</code> request parameters for the Wordfence allowlist. The case demonstrates firewall-level diagnosis; implementation of the allowlist is not attributed to me.</p>
     </article>
-    <article class="case-card"><span class="case-label">HTTP 500 · PHP logs</span><h3>Divi Mega Pro causing server errors</h3>
+    <article class="case-card" id="case-http-divi"><span class="case-label">HTTP 500 · PHP logs</span><h3>Divi Mega Pro causing server errors</h3>
       <p class="case-step"><strong>Symptom:</strong> Missing pages returned HTTP 500 instead of the expected 404 response.</p>
       <p class="case-step"><strong>Investigation:</strong> Reviewed the PHP error log and isolated Divi Mega Pro as the source of the failure.</p>
       <p class="case-step"><strong>Outcome:</strong> Provided a specific plugin-level finding to guide troubleshooting. Separately, the related Google Ads issue was corrected by updating sitelink URLs.</p>
     </article>
-    <article class="case-card"><span class="case-label">HTTP 400 · Product validation</span><h3>AI Blogger rejected a post without an author</h3>
+    <article class="case-card" id="case-http-aiblogger"><span class="case-label">HTTP 400 · Product validation</span><h3>AI Blogger rejected a post without an author</h3>
       <p class="case-step"><strong>Symptom:</strong> The AI Blogger “Post now” action failed with HTTP 400.</p>
       <p class="case-step"><strong>Investigation:</strong> The backend validation response stated “Author is required”.</p>
       <p class="case-step"><strong>Workaround &amp; handoff:</strong> Documented selecting an author as the workaround; the development fix was still in progress at the time of the case.</p>
     </article>
-    <article class="case-card"><span class="case-label">HTTP 403 · Hosting layer</span><h3>Separating host-level blocks from application defects</h3>
+    <article class="case-card" id="case-http-hosting"><span class="case-label">HTTP 403 · Hosting layer</span><h3>Separating host-level blocks from application defects</h3>
       <p class="case-step"><strong>Investigation:</strong> In another Social AI integration case, the customer's hosting provider returned 403 to requests from the platform.</p>
       <p class="case-step"><strong>Handoff:</strong> Identified the host-side rejection and coordinated the technical escalation; Engineering implemented the fix.</p>
     </article>
@@ -2372,43 +2372,58 @@ dialog.addEventListener('keydown',function(event){if(event.target===panel||panel
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
+  // These labels describe the issue area evidenced in each case. They are not claims that every fix was implemented by Support.
   var skills={
-    'case-abilene-multisite':['WordPress Multisite','HTTP 502','Database','Jira','Engineering escalation'],
-    'case-memory-exhaustion':['PHP','HTTP 500','phpMyAdmin','WordPress','Jira'],
-    'case-divi-template-escalation':['WordPress','Template provisioning','Backend escalation','Customer communication'],
-    'case-child-page-redirect':['WordPress','URL redirects','Domain mapping','Troubleshooting'],
-    'case-account-recovery':['Account recovery','Website restoration','WordPress','Customer communication'],
-    'case-security':['WordPress security','File investigation','Malware indicators','Incident response'],
-    'case-email':['Email deliverability','Bounce suppression','Forms','Troubleshooting'],
-    'case-core':['WordPress core','SFTP','File restoration','Admin access'],
-    'case-domain':['Custom domains','DNS','Domain verification','Publishing'],
-    'case-plugin':['WordPress plugins','SFTP','PHP troubleshooting','Admin access'],
-    'case-divi-upload':['Divi Builder','Media uploads','WordPress','Troubleshooting'],
-    'case-dashboard-followup':['WordPress dashboard','Access troubleshooting','Customer follow-up'],
-    'case-template-followup':['WordPress templates','Installation troubleshooting','Escalation','Customer follow-up'],
-    'case-wordfence-followup':['Wordfence','WordPress security','Multi-site review','Customer follow-up'],
-    'case-email-authentication':['Email authentication','SPF','DKIM','DMARC','Deliverability'],
-    'case-amp-dns':['DNS','AMP','Record configuration','Troubleshooting'],
-    'case-security-plugin-followup':['WordPress security','Security plugin','Access recovery','Follow-up'],
-    'case-captcha':['reCAPTCHA','Spam prevention','WordPress forms','Configuration'],
-    'case-import':['WordPress migration','Backup archive','Website import','File handling'],
-    'case-sftp':['SFTP','Connection troubleshooting','Hosting','Access testing'],
-    'case-php':['PHP 8.3','Plugin compatibility','WordPress','Upgrade readiness'],
-    'case-binding':['Custom domains','Domain mapping','Project configuration','Troubleshooting'],
-    'case-push':['JavaScript','Push notifications','Root files','Script investigation'],
-    'case-suppression':['Email deliverability','Form notifications','Bounce suppression','Investigation'],
-    'case-visibility':['Email delivery','Welcome emails','Reporting gap','Documentation'],
-    'case-robots':['robots.txt','SEO basics','File management','WordPress'],
-    'http-investigations':['HTTP 400','HTTP 403','HTTP 500','PHP logs','Wordfence','API troubleshooting']
+    'case-http-bebuilder':['WordPress firewall','Save-request filtering'],
+    'case-http-divi':['PHP error logs','Plugin-level diagnosis'],
+    'case-http-aiblogger':['Backend validation','Application troubleshooting'],
+    'case-http-hosting':['Hosting integration','Engineering escalation'],
+    'case-abilene-multisite':['WordPress Multisite','HTTP 502 / 404','Jira escalation'],
+    'case-memory-exhaustion':['HTTP 500','PHP memory limit','phpMyAdmin','REST endpoint check'],
+    'case-divi-template-escalation':['Website provisioning','Backend escalation','Customer verification'],
+    'case-saved-redirect':['URL redirects','Yoast SEO','Plugin configuration'],
+    'case-child-page-redirect':['DNS','Domain routing','Custom domain'],
+    'case-account-recovery':['Account recovery','Website restoration','Domain diagnosis'],
+    'case-security':['WordPress security','Wordfence scan','Malware triage'],
+    'case-email':['Email deliverability','Bounce suppression','Form notifications'],
+    'case-core':['WordPress core files','SFTP','Admin access recovery'],
+    'case-domain':['DNS','CNAME records','Domain verification'],
+    'case-plugin':['REST API authentication plugin','SFTP','WordPress admin access'],
+    'case-divi-upload':['Divi Builder','Theme isolation','Media upload testing'],
+    'case-dashboard-followup':['WordPress dashboard','Access follow-up'],
+    'case-template-followup':['Template provisioning','SetWpOption error','Customer follow-up'],
+    'case-wordfence-followup':['Wordfence','Multi-site security review','Customer follow-up'],
+    'case-email-authentication':['Email authentication','DMARC','Mimecast rejection'],
+    'case-amp-dns':['DNS validation','AMP interface','Product feedback'],
+    'case-security-plugin-followup':['Security plugin','WordPress access','Customer follow-up'],
+    'case-captcha':['reCAPTCHA v3','WordPress forms','Spam troubleshooting'],
+    'case-import':['Website migration','Backup ZIP','Website import'],
+    'case-sftp':['SFTP','FileZilla','Connection testing'],
+    'case-php':['PHP 8.3','Plugin compatibility','Upgrade readiness'],
+    'case-binding':['Custom domain','DNS records','SSL binding'],
+    'case-push':['JavaScript','SFTP file upload','Push-notification script'],
+    'case-suppression':['Email deliverability','Bounce suppression','Form notifications'],
+    'case-visibility':['Email event verification','Delivery reporting','Product feedback'],
+    'case-robots':['robots.txt','File management','WordPress']
   };
+
   Object.keys(skills).forEach(function(id){
-    var card=document.getElementById(id); if(!card)return;
-    var target=card.querySelector('.case-entry-body')||card;
+    var card=document.getElementById(id);
+    if(!card)return;
+    var target=card.querySelector('.case-preview')||card;
     if(target.querySelector('.applied-tags'))return;
-    var tags=document.createElement('div'); tags.className='applied-tags'; tags.setAttribute('aria-label','Skills applied in this case');
-    skills[id].forEach(function(label){var tag=document.createElement('span');tag.className='skill-tag';tag.textContent=label;tags.appendChild(tag);});
-    var anchor=target.querySelector('.case-topic')||target.querySelector('.case-story')||target.firstElementChild;
-    if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(tags,anchor.nextSibling);else target.appendChild(tags);
+    var tags=document.createElement('div');
+    tags.className='applied-tags';
+    tags.setAttribute('aria-label','Technical areas demonstrated in this case');
+    skills[id].forEach(function(label){
+      var tag=document.createElement('span');
+      tag.className='skill-tag';
+      tag.textContent=label;
+      tags.appendChild(tag);
+    });
+    var anchor=target.querySelector('.case-status')||target.querySelector('.case-meta')||target.querySelector('h3')||target.firstElementChild;
+    if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(tags,anchor.nextSibling);
+    else target.appendChild(tags);
   });
 });
 </script>
