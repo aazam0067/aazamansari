@@ -1561,6 +1561,11 @@ section { padding:24px 18px; margin-bottom:16px; }
 @media(max-width:850px) { .featured-work { grid-template-columns:1fr; } }
 @media(max-width:560px) { .featured-card { padding:15px; } .all-case-list>.complexity-key,.all-case-list>.case-filters,.all-case-list>#case-filter-status,.all-case-list>.case-controls,.all-case-list>.case-grid,.all-case-list>#undated-cases { margin-left:10px; margin-right:10px; } }
 
+
+/* Case-study skill tags: keep the applied skills more prominent than difficulty labels. */
+.applied-tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.applied-tags .skill-tag{display:inline-flex;align-items:center;padding:4px 9px;border:1px solid #d6e5dc;border-radius:999px;background:#f1f7f3;color:#245b42;font-size:11px;font-weight:700;line-height:1.35}
+.case-meta .complexity,.complexity-key{display:none!important}
 </style>
 </head>
 <body id="page-top">
@@ -2477,6 +2482,49 @@ document.getElementById('evidence-prev').addEventListener('click',function(){if(
 document.getElementById('evidence-next').addEventListener('click',function(){if(current<links.length-1)show(current+1);});
 dialog.addEventListener('keydown',function(event){if(event.target===panel||panel.classList.contains('is-zoomed'))return;if(event.key==='ArrowRight'&&current<links.length-1){event.preventDefault();show(current+1);}if(event.key==='ArrowLeft'&&current>0){event.preventDefault();show(current-1);}});
 })();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var skills={
+    'case-abilene-multisite':['WordPress Multisite','HTTP 502','Database','Jira','Engineering escalation'],
+    'case-memory-exhaustion':['PHP','HTTP 500','phpMyAdmin','WordPress','Jira'],
+    'case-divi-template-escalation':['WordPress','Template provisioning','Backend escalation','Customer communication'],
+    'case-child-page-redirect':['WordPress','URL redirects','Domain mapping','Troubleshooting'],
+    'case-account-recovery':['Account recovery','Website restoration','WordPress','Customer communication'],
+    'case-security':['WordPress security','File investigation','Malware indicators','Incident response'],
+    'case-email':['Email deliverability','Bounce suppression','Forms','Troubleshooting'],
+    'case-core':['WordPress core','SFTP','File restoration','Admin access'],
+    'case-domain':['Custom domains','DNS','Domain verification','Publishing'],
+    'case-plugin':['WordPress plugins','SFTP','PHP troubleshooting','Admin access'],
+    'case-divi-upload':['Divi Builder','Media uploads','WordPress','Troubleshooting'],
+    'case-dashboard-followup':['WordPress dashboard','Access troubleshooting','Customer follow-up'],
+    'case-template-followup':['WordPress templates','Installation troubleshooting','Escalation','Customer follow-up'],
+    'case-wordfence-followup':['Wordfence','WordPress security','Multi-site review','Customer follow-up'],
+    'case-email-authentication':['Email authentication','SPF','DKIM','DMARC','Deliverability'],
+    'case-amp-dns':['DNS','AMP','Record configuration','Troubleshooting'],
+    'case-security-plugin-followup':['WordPress security','Security plugin','Access recovery','Follow-up'],
+    'case-captcha':['reCAPTCHA','Spam prevention','WordPress forms','Configuration'],
+    'case-import':['WordPress migration','Backup archive','Website import','File handling'],
+    'case-sftp':['SFTP','Connection troubleshooting','Hosting','Access testing'],
+    'case-php':['PHP 8.3','Plugin compatibility','WordPress','Upgrade readiness'],
+    'case-binding':['Custom domains','Domain mapping','Project configuration','Troubleshooting'],
+    'case-push':['JavaScript','Push notifications','Root files','Script investigation'],
+    'case-suppression':['Email deliverability','Form notifications','Bounce suppression','Investigation'],
+    'case-visibility':['Email delivery','Welcome emails','Reporting gap','Documentation'],
+    'case-robots':['robots.txt','SEO basics','File management','WordPress'],
+    'http-investigations':['HTTP 400','HTTP 403','HTTP 500','PHP logs','Wordfence','API troubleshooting']
+  };
+  Object.keys(skills).forEach(function(id){
+    var card=document.getElementById(id); if(!card)return;
+    var target=card.querySelector('.case-entry-body')||card;
+    if(target.querySelector('.applied-tags'))return;
+    var tags=document.createElement('div'); tags.className='applied-tags'; tags.setAttribute('aria-label','Skills applied in this case');
+    skills[id].forEach(function(label){var tag=document.createElement('span');tag.className='skill-tag';tag.textContent=label;tags.appendChild(tag);});
+    var anchor=target.querySelector('.case-topic')||target.querySelector('.case-story')||target.firstElementChild;
+    if(anchor&&anchor.parentNode)anchor.parentNode.insertBefore(tags,anchor.nextSibling);else target.appendChild(tags);
+  });
+});
 </script>
 </body>
 </html>
