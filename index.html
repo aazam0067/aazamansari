@@ -1581,8 +1581,8 @@ section { padding:24px 18px; margin-bottom:16px; }
       <h1>Azam Ansari</h1>
       <p class="role">Technical Support Specialist<br><span>Product troubleshooting · SaaS, Web &amp; APIs</span></p>
       <p class="current-employment"><strong>Website Support Specialist at Vendasta</strong><span>August 2022–present · Jamshedpur, India</span></p>
-      <p class="editorial-intro">I investigate customer-reported product and website issues, document technical evidence, and coordinate with engineering teams through resolution. Explore selected cases, tools and outcomes below.</p>
-      <div class="hero-actions"><a href="#case-studies">View troubleshooting cases</a><button type="button" data-download-cv>Download CV</button></div><div class="contact-row">
+      <p class="editorial-intro">I investigate customer-reported product and website issues, document technical evidence, and coordinate with engineering teams through resolution. I also use AI assistants and AI-enabled SaaS tools in research, troubleshooting, documentation and coding workflows.</p>
+      <div class="hero-actions"><a href="#case-studies">View troubleshooting cases</a><a href="cv.html" target="_blank" rel="noopener">View / download CV</a></div><div class="contact-row">
         <span>
           <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
           Jamshedpur, Jharkhand, India
@@ -1616,8 +1616,8 @@ section { padding:24px 18px; margin-bottom:16px; }
     </div>
     <div class="skills-list">
       <div class="skill-row"><span class="skill-label">Web &amp; infrastructure</span><span class="skill-detail">WordPress, WooCommerce, domains, DNS, SSL/TLS, Nginx, Cloudflare, cPanel, SFTP, migrations and hosting.</span></div>
-      <div class="skill-row"><span class="skill-label">APIs &amp; browser debugging</span><span class="skill-detail">Postman, REST requests, HTTP responses, JSON payloads, Chrome DevTools, Console, Network inspection and HAR analysis.</span></div>
-      <div class="skill-row"><span class="skill-label">Database &amp; application troubleshooting</span><span class="skill-detail">phpMyAdmin table repair, WordPress/MySQL imports, PHP and server-log review, and foundational SQL (SELECT and filtering; basic JOIN/GROUP BY concepts).</span></div>
+      <div class="skill-row"><span class="skill-label">APIs &amp; browser debugging</span><span class="skill-detail">Postman, REST API requests, HTTP status validation, Chrome DevTools, Console, Network inspection and HAR analysis.</span></div>
+      <div class="skill-row"><span class="skill-label">Database &amp; application troubleshooting</span><span class="skill-detail">phpMyAdmin table repair, WordPress/MySQL imports, PHP and server-log review; database troubleshooting without overstating SQL query-writing experience.</span></div>
       <div class="skill-row"><span class="skill-label">Product triage &amp; engineering</span><span class="skill-detail">Issue reproduction, expected/actual results, impact notes, screenshots, logs, Jira bug reports and coordination with Product, Engineering and backend teams.</span></div>
       <div class="skill-row"><span class="skill-label">Support operations</span><span class="skill-detail">Zendesk, Freshdesk, Jira, Slack, Confluence and Google Workspace; customer communication, escalation follow-through and SLA-based prioritization.</span></div>
       <div class="skill-row"><span class="skill-label">Documentation &amp; team enablement</span><span class="skill-detail">Recurring-ticket patterns, SOP and Confluence guidance, 5 Zendesk articles, 5 Loom walkthroughs and mentoring new team members.</span></div>
@@ -1625,12 +1625,44 @@ section { padding:24px 18px; margin-bottom:16px; }
     </div>
   </section>
 
-  <section id="case-studies"><div class="section-head"><span class="section-num mono">03</span><h2>Featured investigations</h2></div>
+  <section id="http-investigations">
+  <div class="section-head"><span class="section-num mono">03</span><h2>HTTP &amp; API troubleshooting</h2></div>
+  <p class="section-intro">Selected real support investigations showing how I isolate the source of an error before recommending a workaround or escalating for a product-side fix.</p>
+  <div class="case-grid">
+    <article class="case-card"><span class="case-label">HTTP 403 · WordPress security</span><h3>BeBuilder save blocked by Wordfence</h3>
+      <p class="case-step"><strong>Symptom:</strong> The BeBuilder editor returned an Error 403 when saving.</p>
+      <p class="case-step"><strong>Investigation:</strong> Checked Wordfence Live Traffic and found the site's own firewall was blocking the save request as a possible XSS attempt.</p>
+      <p class="case-step"><strong>Finding:</strong> Identified the relevant <code>sections</code> and <code>obj</code> request parameters for the Wordfence allowlist. The case demonstrates firewall-level diagnosis; implementation of the allowlist is not attributed to me.</p>
+    </article>
+    <article class="case-card"><span class="case-label">HTTP 500 · PHP logs</span><h3>Divi Mega Pro causing server errors</h3>
+      <p class="case-step"><strong>Symptom:</strong> Missing pages returned HTTP 500 instead of the expected 404 response.</p>
+      <p class="case-step"><strong>Investigation:</strong> Reviewed the PHP error log and isolated Divi Mega Pro as the source of the failure.</p>
+      <p class="case-step"><strong>Outcome:</strong> Provided a specific plugin-level finding to guide troubleshooting. Separately, the related Google Ads issue was corrected by updating sitelink URLs.</p>
+    </article>
+    <article class="case-card"><span class="case-label">HTTP 400 · Product validation</span><h3>AI Blogger rejected a post without an author</h3>
+      <p class="case-step"><strong>Symptom:</strong> The AI Blogger “Post now” action failed with HTTP 400.</p>
+      <p class="case-step"><strong>Investigation:</strong> The backend validation response stated “Author is required”.</p>
+      <p class="case-step"><strong>Workaround &amp; handoff:</strong> Documented selecting an author as the workaround; the development fix was still in progress at the time of the case.</p>
+    </article>
+    <article class="case-card"><span class="case-label">HTTP 403 · Hosting layer</span><h3>Separating host-level blocks from application defects</h3>
+      <p class="case-step"><strong>Investigation:</strong> In another Social AI integration case, the customer's hosting provider returned 403 to requests from the platform.</p>
+      <p class="case-step"><strong>Handoff:</strong> Identified the host-side rejection and coordinated the technical escalation; Engineering implemented the fix.</p>
+    </article>
+  </div>
+  <p class="case-privacy">Customer names, domains and ticket identifiers are intentionally omitted. Outcomes are attributed to the relevant support or engineering work.</p>
+</section>
+
+<section id="case-studies"><div class="section-head"><span class="section-num mono">04</span><h2>Featured investigations</h2></div>
 <p class="section-intro">A few product and platform investigations most relevant to technical product support. Open a case for the problem, my contribution and the verified outcome.</p>
 <div class="featured-work" aria-label="Featured technical investigations">
   <a class="featured-card" href="#case-memory-exhaustion"><span class="featured-kicker">PHP · Database · Incident recovery</span><strong>Investigating a PHP memory-exhaustion failure</strong><span>Raised the Jira bug, checked affected routes and used phpMyAdmin during initial troubleshooting; coordinated the documented recovery with the technical team.</span><em>Open case study →</em></a>
   <a class="featured-card" href="#case-abilene-multisite"><span class="featured-kicker">WordPress Multisite · Product defect</span><strong>Tracking a multisite upgrade failure</strong><span>Documented post-upgrade symptoms and followed the provisioning and permalink defects through engineering review and production verification.</span><em>Open case study →</em></a>
   <a class="featured-card" href="#case-divi-template-escalation"><span class="featured-kicker">Template provisioning · Escalation</span><strong>Resolving a template setup issue</strong><span>Coordinated a backend escalation, kept the partner updated and confirmed the recreated site was working.</span><em>Open case study →</em></a>
+</div>
+<div class="featured-work" aria-label="HTTP and API troubleshooting examples">
+  <a class="featured-card" href="#http-investigations"><span class="featured-kicker">HTTP 403 · Security</span><strong>Tracing a blocked BeBuilder save</strong><span>Used Wordfence Live Traffic to identify the site's firewall as the source of the blocked save request.</span><em>View investigation →</em></a>
+  <a class="featured-card" href="#http-investigations"><span class="featured-kicker">HTTP 500 · PHP logs</span><strong>Identifying a plugin-related failure</strong><span>Reviewed PHP logs and traced 500 responses to the Divi Mega Pro plugin.</span><em>View investigation →</em></a>
+  <a class="featured-card" href="#http-investigations"><span class="featured-kicker">HTTP 400 · Application validation</span><strong>Finding a missing-author validation error</strong><span>Identified the backend validation message behind an AI Blogger publishing failure.</span><em>View investigation →</em></a>
 </div>
 <details class="all-case-list" id="all-case-list"><summary>Browse all 27 detailed support cases</summary><details class="complexity-key"><summary>What do the technical levels mean?</summary><p>Focused: a defined task. Intermediate: several settings or components to check. Complex: recovery work or investigation across systems. These describe the case, not a measured skill score.</p></details>
 <div class="case-filters" role="group" aria-label="Filter case studies"><button type="button" data-case-filter="all" aria-pressed="true">All cases</button><button type="button" data-case-filter="resolved" aria-pressed="false">Restored functionality</button><button type="button" data-case-filter="investigation" aria-pressed="false">Investigation &amp; escalation</button><button type="button" data-case-filter="followup" aria-pressed="false">Shared-case follow-up</button></div><p id="case-filter-status" class="evidence-note" aria-live="polite">Open any story for details.</p><div class="case-controls"><button type="button" id="expand-cases">Expand all stories</button><button type="button" id="collapse-cases">Collapse all stories</button><a href="#undated-cases">More case studies &darr;</a></div>
@@ -2001,7 +2033,7 @@ section { padding:24px 18px; margin-bottom:16px; }
       <ul>
         <li>Support international agency partners and SMB customers through email, chat, phone and screen share.</li>
         <li>Troubleshoot WordPress/WooCommerce, hosting, DNS, SSL/TLS, custom domains, email delivery, migrations, security, backups and performance.</li>
-        <li>Investigate application issues using PHP logs, Chrome DevTools, Network/HAR inspection and Postman; use phpMyAdmin for database-level troubleshooting.</li>
+        <li>Investigate application issues using PHP logs, Chrome DevTools, Network/HAR inspection and Postman; use phpMyAdmin for database-level troubleshooting.</li>\n        <li>Use Postman for REST API operations and configuration checks, including white-label domain/SSL workflows; validate successful requests through HTTP status responses.</li>\n        <li>Investigate HTTP 403 firewall blocks, HTTP 400 application validation failures and HTTP 500 PHP/plugin errors; distinguish site-level, hosting-layer and product-side causes.</li>
         <li>Prepare Jira escalations with reproduction steps, expected versus actual behaviour, customer impact, screenshots and logs; coordinate with Product, Engineering and backend teams.</li>
         <li>Prioritize concurrent tickets by SLA and customer impact, then follow escalations through customer updates and resolution checks.</li>
         <li>Review recurring ticket patterns and turn repeat issues into SOPs and troubleshooting resources; produced 5 Zendesk articles and 5 Loom walkthroughs, and mentor new team members.</li>
@@ -2408,7 +2440,7 @@ document.addEventListener('click',function(event){if(!contactPicker.contains(eve
 contactPicker.addEventListener('keydown',function(event){if(event.key==='Escape'){contactPicker.open=false;contactPicker.querySelector('summary').focus();}});
 contactPicker.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){contactPicker.open=false;});});
 </script>
-<script src="cv-download.js" defer></script>
+
 <dialog class="evidence-dialog" id="ticket-evidence-dialog" aria-labelledby="evidence-dialog-title"><div class="evidence-dialog-bar"><h2 id="evidence-dialog-title">Ticket evidence</h2><button type="button" id="evidence-zoom" aria-pressed="false">Zoom in</button><button type="button" id="evidence-close" aria-label="Close screenshot viewer">Close ✕</button></div><div class="evidence-image-scroll" tabindex="0" aria-label="Screenshot; scroll to read when zoomed"><img id="evidence-full-image" alt=""></div><p class="evidence-dialog-caption" id="evidence-dialog-caption"></p><div class="evidence-dialog-controls"><button type="button" id="evidence-prev">← Previous</button><span id="evidence-position" aria-live="polite"></span><button type="button" id="evidence-next">Next →</button><a id="evidence-original" target="_blank" rel="noopener">Open redacted image in a new tab ↗</a></div></dialog>
 <script>
 (function(){
